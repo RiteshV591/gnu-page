@@ -1,0 +1,5725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="text/javascript">
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://widgets.nopaperforms.com/emwgts.js";
+    document.body.appendChild(s);
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: #ffffff66;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgb(19, 35, 62);
+    }
+
+    /* Header/NavBar */
+
+    .header-container {
+      background-color: rgba(19, 35, 62, 0.8);
+      border-bottom: 1px solid #ffffff66;
+      backdrop-filter: blur(5px);
+      position: fixed;
+      z-index: 998;
+      border-radius: 0 0 16px 16px;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .my-container {
+      max-width: 1320px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+
+    @media (max-width: 991px) {
+      .my-container {
+        padding: 30px 15px !important;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .main-logo {
+      width: 175px;
+    }
+
+    .secondary-logo {
+      width: 70px;
+    }
+
+    .menu-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .menu-items {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .menu-item,
+    .contact-item {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .whatsapp-button {
+      background-color: transparent;
+      border: 1px solid #ffffff66;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+
+      .whatsapp-icon {
+        width: 20px;
+      }
+    }
+
+    /* Dropdown Menu */
+    .dropdown-content {
+      display: none;
+      position: fixed;
+      background-color: rgba(19, 35, 62, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      top: 108px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1191px;
+      min-width: 600px;
+      z-index: 999;
+      border-radius: 0px 0px 16px 16px;
+      border: 1px solid #ffffff66;
+    }
+
+    .dropdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      border-radius: 0px 0px 16px 16px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .left-column .span-both {
+      grid-column: span 2;
+      width: 100%;
+    }
+
+    .dropdown-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      border: 1px solid #ffffff66;
+      color: #fff;
+      padding: 18px 24px;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+    }
+
+    .span-both {
+      grid-column: 1 / span 2;
+      color: #fff;
+      padding: 18px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      border-top: 1px solid #ffffff66;
+    }
+
+    @media (max-width: 481px) {
+      .span-both {
+        border: 1px solid #ffffff66;
+        padding: 8px;
+      }
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #333;
+    }
+
+    .dropdown-icon {
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-item.show-icon .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .program-section {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .program-btn {
+      border-radius: 6px;
+      padding: 18px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16.8px;
+      border: 1px solid #ffffff66;
+      background-color: transparent;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .program-section {
+        overflow-x: auto;
+        padding: 16px;
+        gap: 10px;
+      }
+
+      .program-btn {
+        height: 75px;
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .program-section {
+        overflow-x: auto;
+        padding: 16px 10px;
+        gap: 10px;
+      }
+    }
+
+    .program-btn a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .program-btn:hover {
+      background-color: #e74c3c;
+    }
+
+    .program-btn.program-btn-active {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+    }
+
+    .show-more-btn {
+      border-radius: 6px;
+      padding: 18px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16.8px;
+      border: 1px solid #ffffff66;
+      background-color: transparent;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .show-more-btn:hover {
+      background-color: #e74c3c;
+    }
+
+    .show {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .show-icon {
+      display: flex;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 710px) {
+      .dropdown-content {
+        min-width: 100%;
+        top: 150px;
+      }
+
+      .dropdown-grid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dropdown-content {
+        padding: 10px;
+      }
+
+      .dropdown-content ul {
+        padding: 0;
+      }
+
+      .dropdown-content li a {
+        padding: 8px;
+      }
+    }
+
+    /* Hero Section */
+
+    .hero-section {
+      position: relative;
+      height: auto;
+      justify-content: flex-start;
+      padding: 180px 0px 110px 0px;
+      background-size: cover;
+      object-fit: fill;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("https://d1prjjs37junl3.cloudfront.net/admissions/herosection.webp");
+    }
+
+    @media (max-width: 649px) {
+      .hero-section {
+        height: auto;
+        padding-bottom: 88px !important;
+      }
+    }
+
+    .admission-text {
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 18px 24px;
+    }
+
+    .highlight-red {
+      color: #fb4b50;
+    }
+
+    .highlight-white {
+      color: #fff;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .diverse-learning-section {
+      background: var(--St-Tropaz-950, #13233e);
+      padding: 64px 80px;
+      text-align: center;
+    }
+
+    @media (max-width: 991px) {
+      .diverse-learning-section {
+        padding: 30px !important;
+      }
+    }
+
+    .diverse-section-title {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.96px;
+      text-transform: capitalize;
+    }
+
+    .highlight {
+      color: rgba(245, 44, 49, 1);
+    }
+
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 36px;
+      max-width: 1280px;
+    }
+
+    @media (max-width: 991px) {
+      .stats-container {
+        justify-content: center;
+        gap: 35px;
+      }
+    }
+
+    .stat-item {
+      flex: 1;
+      flex-basis: 0%;
+    }
+
+    .stat-number {
+      color: #fff;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1.92px;
+    }
+
+    .stat-description {
+      color: var(--gray-100, #f3f4f6);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 25px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 991px) {
+
+      /* Header */
+      .header-content {
+        padding: 12px 20px;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .logo-wrapper {
+        justify-content: center;
+      }
+
+      .menu-container {
+        justify-content: center;
+      }
+
+      .menu-items {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      /* Hero section */
+
+      .hero-section {
+        padding: 170px 20px 88px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+    }
+
+    /* alumni */
+
+    .alumni-section {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 775px;
+      overflow: hidden;
+      padding: 96px 90px;
+    }
+
+    .background-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .alumni-content-wrapper {
+      position: relative;
+      align-self: center;
+      display: flex;
+      width: 1206px;
+      max-width: 100%;
+      flex-direction: column;
+      font-family: Orkney, sans-serif;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 32px;
+      letter-spacing: 0.96px;
+      text-transform: capitalize;
+    }
+
+    .main-title {
+      font-size: 48px;
+      line-height: 60px;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    .highlight {
+      color: rgba(251, 75, 80, 1);
+    }
+
+    .alumni-grid {
+      position: relative;
+      display: flex;
+      margin-top: 64px;
+      width: 100%;
+      align-items: start;
+      gap: 40px 42px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .alumni-card {
+      display: flex;
+      flex-direction: column;
+      width: 216px;
+      position: relative;
+    }
+
+    .alumni-image {
+      aspect-ratio: 0.72;
+      object-fit: contain;
+      object-position: center;
+      width: 216px;
+    }
+
+    .company-logo-wrapper {
+      border-radius: 12px 12px 0 0;
+      background-color: #fff;
+      align-self: end;
+      display: flex;
+      width: 114px;
+      max-width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: center;
+      padding: 6px;
+      margin-top: -47px;
+    }
+
+    .company-logo {
+      aspect-ratio: 3.92;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+    }
+
+    .alumni-info {
+      border-radius: 12px 0 12px 12px;
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Orkney, sans-serif;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .alumni-name {
+      color: #111928;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+
+    .alumni-position {
+      color: #4b5563;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0.42px;
+    }
+
+    .mb-16 {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .alumni-section {
+        padding: 0 20px;
+      }
+
+      .subtitle {
+        max-width: 100%;
+      }
+
+      .main-title {
+        max-width: 100%;
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      .subtitle {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+        text-transform: capitalize;
+      }
+
+      .alumni-grid {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    /* ignite-section */
+
+    .ignite-section {
+      align-items: center;
+      background: var(--St-Tropaz-950, #13233e);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Orkney, sans-serif;
+      line-height: 1;
+      justify-content: start;
+      padding: 96px 90px;
+      position: relative;
+    }
+
+    .ignite-section-img {
+      position: absolute;
+      top: 18px;
+      max-height: 311px;
+      max-width: 311px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .content-wrapper {
+      display: flex;
+      width: 916px;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .main-heading {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .highlight-red {
+      color: var(--Torch-Red-400, #fb4b50);
+    }
+
+    .sub-heading {
+      color: var(--New-folder-White, #fff);
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 16px;
+    }
+
+    .cta-button {
+      border-radius: 6px;
+      border: 1px solid #00000066;
+      background: var(--Torch-Red-400, #fb4b50);
+      margin-top: 24px;
+      font-size: 24px;
+      color: var(--gray-900, #111928);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.72px;
+      padding: 18px 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 991px) {
+      .ignite-section {
+        padding: 20px 20px;
+      }
+
+      .main-heading,
+      .sub-heading {
+        max-width: 100%;
+      }
+
+      .cta-button {
+        padding: 18px 20px;
+      }
+    }
+
+    /* awards-rating-section */
+
+    .awards-rating-section {
+      align-items: center;
+      background: var(--St-Tropaz-950, #13233e);
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding: 96px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .awards-rating-section {
+        padding: 0 20px;
+      }
+    }
+
+    .awards-rating-image-wrapper {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+
+    .award-rating-bg-image {
+      max-width: 381px;
+      width: 100%;
+      height: 341px;
+      opacity: 0.5;
+    }
+
+    .awards-section-title {
+      align-self: stretch;
+      color: var(--New-folder-White, #fff);
+      text-align: center;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+      .awards-section-title {
+        max-width: 100%;
+        font-size: 30px;
+      }
+    }
+
+    .awards-container {
+      display: flex;
+      margin-top: 48px;
+      max-width: 100%;
+      width: 1280px;
+      align-items: center;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+      z-index: 1;
+    }
+
+    .awards-image {
+      cursor: pointer;
+    }
+
+    @media (max-width: 991px) {
+      .awards-container {
+        margin-top: 40px;
+      }
+    }
+
+    .award-image {
+      object-fit: contain;
+      object-position: center;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .award-image-1 {
+      width: 66px;
+      aspect-ratio: 0.94;
+    }
+
+    .award-image-2 {
+      width: 85px;
+      aspect-ratio: 1.21;
+    }
+
+    .award-image-3 {
+      width: 160px;
+      aspect-ratio: 2.28;
+    }
+
+    .award-image-4 {
+      width: 164px;
+      aspect-ratio: 2.34;
+    }
+
+    .award-image-5 {
+      width: 98px;
+      aspect-ratio: 1.4;
+    }
+
+    .award-image-6 {
+      width: 189px;
+      aspect-ratio: 2.7;
+    }
+
+    .award-image-7 {
+      width: 158px;
+      aspect-ratio: 2.26;
+    }
+
+    .rankings-container {
+      display: flex;
+      margin-top: 48px;
+      max-width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      color: var(--New-folder-White, #fff);
+      text-align: center;
+      letter-spacing: 0.6px;
+      justify-content: center;
+      font: 700 20px/125% Orkney, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .rankings-container {
+        margin-top: 40px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+    }
+
+    .ranking-image {
+      object-fit: contain;
+      object-position: center;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    @media (max-width: 1025px) {
+      .ranking-image {
+        display: none;
+      }
+    }
+
+    .ranking-image-1 {
+      width: 85px;
+      aspect-ratio: 0.47;
+    }
+
+    .ranking-image-2 {
+      width: 86px;
+      aspect-ratio: 0.48;
+    }
+
+    .ranking-item {
+      align-self: stretch;
+      width: 240px;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ranking-title {
+      font-weight: 300;
+      line-height: 25px;
+    }
+
+    .ranking-score {
+      font-size: 30px;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+    }
+
+    .ranking-source {
+      font-weight: 400;
+      line-height: 25px;
+    }
+
+    /* industry-associations */
+
+    .industry-associations {
+      align-self: stretch;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 90px;
+    }
+
+    @media (max-width: 991px) {
+      .industry-associations {
+        padding: 0 20px;
+      }
+    }
+
+    .industry-associations-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    @media (max-width: 991px) {
+      .industry-associations-container {
+        flex-direction: column;
+      }
+    }
+
+    .industry-content-wrapper {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+      gap: 84px;
+    }
+
+    .accreditation-logos {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .recognitions-container {
+      display: flex;
+      align-items: start;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .recognitions-approvals-container {
+      width: 150%;
+    }
+
+    @media (max-width: 991px) {
+      .recognitions-approvals-container {
+        width: 100%;
+      }
+    }
+
+    .recognitions-logo-container {
+      display: flex;
+      flex-direction: column;
+      color: var(--gray-900, #111928);
+      text-align: center;
+      text-transform: capitalize;
+      justify-content: flex-start;
+      width: 170px;
+      font: 500 16px/20px Poppins, sans-serif;
+    }
+
+    .recognitions-logo-image {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 80px;
+      align-self: center;
+    }
+
+    .recognitions-logo-title {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 20px;
+      color: #111928;
+    }
+
+    .separator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1px;
+      height: 72px;
+      background-color: #b1b4b9;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 991px) {
+      .industry-content-wrapper {
+        max-width: 100%;
+      }
+
+      .recognitions-logo-container {
+        width: 120px;
+      }
+
+      .separator {
+        display: none;
+      }
+    }
+
+    .title-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      color: #111928;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.44px;
+      justify-content: start;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+      .title-container {
+        max-width: 100%;
+        font-size: 30px;
+      }
+    }
+
+    .membership-container {
+      width: 70%;
+    }
+
+    .title {
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      .title {
+        max-width: 100%;
+        font-size: 30px;
+      }
+
+      .membership-container {
+        width: 100%;
+      }
+    }
+
+    .industry-logo-container {
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      align-items: start;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .industry-logo-container {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    .logo-group {
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .logo-group {
+        max-width: 100%;
+      }
+    }
+
+    .logo {
+      object-fit: contain;
+      object-position: center;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .logo-1 {
+      aspect-ratio: 1.72;
+      width: 103px;
+    }
+
+    .logo-2 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-3 {
+      aspect-ratio: 1.75;
+      width: 140px;
+    }
+
+    .logo-4 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-5 {
+      aspect-ratio: 2.45;
+      width: 196px;
+    }
+
+    .logo-6 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-7 {
+      aspect-ratio: 1.23;
+      width: 98px;
+    }
+
+    .logo-8 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-9 {
+      aspect-ratio: 1.29;
+      width: 103px;
+    }
+
+    .logo-10 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-11 {
+      aspect-ratio: 1.75;
+      width: 140px;
+    }
+
+    .logo-12 {
+      aspect-ratio: 2.87;
+      width: 230px;
+    }
+
+    .logo-13 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-14 {
+      aspect-ratio: 0.93;
+      width: 74px;
+    }
+
+    .logo-15 {
+      aspect-ratio: 0.02;
+      width: 1px;
+    }
+
+    .logo-16 {
+      aspect-ratio: 0.93;
+      width: 74px;
+    }
+
+    .image-hidden {
+      display: block;
+    }
+
+    .industry-divider {
+      height: 60px;
+      width: 1px;
+      background-color: #b1b4b9;
+    }
+
+    @media (max-width: 991px) {
+
+      .image-hidden,
+      .industry-divider {
+        display: none;
+      }
+    }
+
+    @media (max-width: 991px) {
+
+      .logo-1,
+      .logo-3,
+      .logo-5,
+      .logo-7,
+      .logo-9,
+      .logo-11,
+      .logo-13,
+      .logo-15 {
+        width: 120px;
+      }
+    }
+
+    /* excellence-section */
+
+    .excellence-section {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 656px;
+      justify-content: center;
+      padding: 96px 90px;
+      align-items: center;
+    }
+
+    @media (max-width: 991px) {
+      .excellence-section {
+        padding: 0 20px;
+      }
+    }
+
+    .excellence-background-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .excellence-section-title {
+      position: relative;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      font: 700 48px/60px Orkney, sans-serif;
+      text-align: center;
+      max-width: 1260px;
+    }
+
+    @media (max-width: 991px) {
+      .excellence-section-title {
+        max-width: 100%;
+        font-size: 40px;
+        line-height: 56px;
+        padding-top: 20px;
+      }
+    }
+
+    .excellence-logo-container {
+      position: relative;
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .excellence-logo-container {
+        max-width: 100%;
+        margin-top: 30px;
+      }
+    }
+
+    .logo-row {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .logo-row {
+        max-width: 100%;
+      }
+    }
+
+    .excellence-logo-wrapper {
+      align-items: center;
+      border-radius: 6px;
+      border: 1px solid rgba(19, 35, 62, 0.6);
+      background: var(--New-folder-White, #fff);
+      backdrop-filter: blur(7.55px);
+      display: flex;
+      gap: 18px;
+      justify-content: flex-start;
+    }
+
+    .excellence-logo-wrapper img {
+      border-radius: 6px;
+    }
+
+    .logo-image {
+      aspect-ratio: 1.38;
+      object-fit: contain;
+      object-position: center;
+      width: 55px;
+    }
+
+    .logo-text {
+      aspect-ratio: 2.79;
+      object-fit: contain;
+      object-position: center;
+      width: 106px;
+      align-self: flex-start;
+      max-width: 100%;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .programs-section {
+      background: var(--gray-100, #f3f4f6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Orkney, sans-serif;
+      padding: 96px 90px;
+    }
+
+    .programs-content {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .programs-header {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      color: var(--gray-900, #111928);
+      text-align: center;
+    }
+
+    .programs-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+    }
+
+    .programs-description {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 25px;
+      align-self: center;
+      margin-top: 24px;
+      width: 768px;
+      color: #6b7280;
+    }
+
+    .highlight-black {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .unique-programs {
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      flex-direction: column;
+      font-weight: 700;
+    }
+
+    .unique-programs-title {
+      color: var(--gray-900, #111928);
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 0.96px;
+      text-transform: capitalize;
+    }
+
+    .partner-companies {
+      display: flex;
+      margin-top: 16px;
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+      font-size: 20px;
+      color: var(--gray-300, #d1d5db);
+      letter-spacing: 0.6px;
+    }
+
+    .company-list {
+      color: #4b5563;
+      width: 100%;
+    }
+
+    .vertical-divider {
+      width: 1px;
+      height: 20px;
+      color: #d1d5db;
+    }
+
+    .program-types {
+      align-self: center;
+      display: flex;
+      margin-top: 48px;
+      align-items: start;
+      font-size: 14px;
+      color: var(--gray-600, #4b5563);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.42px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .program-types {
+        display: none;
+      }
+
+      .program-types-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        text-wrap: nowrap;
+      }
+    }
+
+    .program-type {
+      border: 1px solid #00000066;
+      padding: 10px 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #4b5563;
+    }
+
+    .program-type:nth-child(1) {
+      border-radius: 6px 0 0 6px;
+    }
+
+    .program-type:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+
+    @media (max-width: 991px) {
+      .program-type {
+        border-radius: 6px;
+      }
+
+      .program-type:nth-child(1) {
+        border-radius: 6px;
+      }
+
+      .program-type:last-child {
+        border-radius: 6px;
+      }
+    }
+
+    .program-type-active {
+      background: var(--Torch-Red-500, #f52c31);
+      color: var(--New-folder-White, #fff);
+    }
+
+    .features-grid {
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      flex-direction: column;
+      color: var(--primary-950, #14273d);
+      font: 400 24px/1 Poppins, sans-serif;
+    }
+
+    .feature-row {
+      display: flex;
+      width: 100%;
+      align-items: start;
+      gap: 24px;
+      justify-content: start;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .feature-card {
+      align-items: center;
+      border-radius: 12px;
+      border: 1px solid var(--gray-300, #d1d5db);
+      background: var(--white, #fff);
+      display: flex;
+      min-width: 240px;
+      gap: 24px;
+      overflow: hidden;
+      justify-content: start;
+      flex-wrap: wrap;
+      flex: 1;
+      flex-basis: 0%;
+      padding: 12px;
+    }
+
+    .feature-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 50px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .feature-title {
+      align-self: stretch;
+      flex: 1;
+      flex-basis: 0%;
+      margin: auto 0;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+
+    }
+
+    @media (max-width: 991px) {
+      .programs-section {
+        padding: 0 20px;
+      }
+
+      .programs-content,
+      .programs-header,
+      .programs-title,
+      .programs-description,
+      .unique-programs,
+      .unique-programs-title,
+      .partner-companies,
+      .company-list,
+      .program-types,
+      .features-grid,
+      .feature-row,
+      .feature-card,
+      .feature-title {
+        max-width: 100%;
+      }
+
+      .features-grid {
+        font: 400 18px/1 Poppins, sans-serif;
+      }
+
+      .programs-title {
+        font-size: 40px;
+      }
+
+      .unique-programs {
+        margin-top: 40px;
+      }
+
+      .program-types {
+        margin-top: 40px;
+      }
+
+      .features-grid {
+        margin-top: 40px;
+      }
+
+      .feature-icon {
+        width: 40px;
+      }
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .facilities-content {
+      align-items: center;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: start;
+      padding: 64px 90px;
+    }
+
+    @media (max-width: 991px) {
+      .facilities-content {
+        padding: 0 20px;
+      }
+    }
+
+    .facilities-header {
+      display: flex;
+      max-width: 100%;
+      flex-direction: column;
+      font-family: Orkney, sans-serif;
+      text-align: center;
+      line-height: 1;
+      justify-content: center;
+      padding-bottom: 20px;
+      padding-top: 30px;
+    }
+
+    .facilities-title {
+      color: #000;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 991px) {
+      .facilities-title {
+        max-width: 100%;
+        font-size: 40px;
+      }
+    }
+
+    .facilities-subtitle {
+      color: #6b7280;
+      font-size: 20px;
+      font-weight: 400;
+      align-self: center;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .facilities-subtitle {
+        max-width: 100%;
+      }
+    }
+
+    .facilities-gallery {
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      max-width: 1248px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+
+    .facilities-gallery img {
+      border-radius: 10px;
+    }
+
+    @media (max-width: 991px) {
+      .facilities-gallery {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    .gallery-grid {
+      display: flex;
+      width: 100%;
+      align-items: start;
+      gap: 24px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-grid {
+        max-width: 100%;
+      }
+    }
+
+    .gallery-column {
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      justify-content: start;
+      width: 301px;
+      gap: 24px;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-column {
+        max-width: 500px;
+        width: 100%;
+      }
+    }
+
+    .gallery-image {
+      aspect-ratio: 1.64;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      min-height: 184px;
+    }
+
+    .gallery-image-tall {
+      aspect-ratio: 1.15;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      min-width: 240px;
+      flex: 1;
+      flex-basis: 0%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-image-tall {
+        max-width: 100%;
+      }
+    }
+
+    .gallery-column-wide {
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      justify-content: start;
+      flex: 1;
+      flex-basis: 0%;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-column-wide {
+        max-width: 100%;
+      }
+    }
+
+    .gallery-column img,
+    .gallery-column-wide img,
+    .gallery-image-tall {
+      border-radius: 10px;
+    }
+
+    .gallery-row {
+      display: flex;
+      width: 100%;
+      align-items: start;
+      gap: 24px;
+      justify-content: start;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-row {
+        max-width: 100%;
+      }
+    }
+
+    .gallery-image-square {
+      aspect-ratio: 1.15;
+      object-fit: contain;
+      object-position: center;
+      width: 212px;
+      flex: 1;
+      flex-basis: 0%;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-image-square {
+        max-width: 100%;
+        min-width: 160px;
+      }
+    }
+
+    .gallery-image-wide {
+      aspect-ratio: 2.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 991px) {
+      .gallery-image-wide {
+        max-width: 100%;
+      }
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .student-swiper-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    .swiper-container-small {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 4rem;
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .swiper-container-small {
+        display: block;
+      }
+    }
+
+    .swiper-container-small .swiper-wrapper {
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .swiper-container {
+        display: none;
+      }
+    }
+
+    .swiper-container .swiper-slide-prev {
+      opacity: 0;
+    }
+
+    .swiper-container .swiper-slide-next {
+      opacity: 0;
+    }
+
+    .swiper-container-small .swiper-slide-prev {
+      opacity: 0;
+    }
+
+    .swiper-container-small .swiper-slide-next {
+      opacity: 0;
+    }
+
+    .international-students-swiper .swiper-slide-prev {
+      opacity: 0;
+    }
+
+    .international-students-swiper .swiper-slide-next {
+      opacity: 0;
+    }
+
+    .international-students-swiper {
+      max-width: 584px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .international-students-swiper img {
+      border-radius: 10px;
+    }
+
+    .international-students-swiper .two-image {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (max-width: 991px) {
+      .international-students-swiper .single-image {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+      }
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .student-swiper-mobile .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiper-pagination,
+    .mobile-swiper-pagination,
+    .students-swiper-pagination {
+      display: block !important;
+      position: relative !important;
+      z-index: 10;
+      margin-top: 1rem;
+    }
+
+    .swiper-pagination,
+    .mobile-swiper-pagination,
+    .student-swiper-pagination {
+      display: flex !important;
+      position: relative !important;
+      z-index: 10;
+      margin-top: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-pagination-bullet,
+    .students-swiper-pagination {
+      width: 10px;
+      height: 10px;
+      background-color: #c5d7f2;
+      border-radius: 50%;
+      opacity: 0.4;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+    }
+
+    .swiper-pagination-bullet-active,
+    .students-swiper-pagination {
+      width: 28px;
+      height: 10px;
+      background-color: #1e4986;
+      opacity: 1;
+      border-radius: 1rem;
+    }
+
+    .swiper-small-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .placement-opportunity-section {
+      align-items: center;
+      background-color: #f3f6fc;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: start;
+      padding: 64px 90px;
+    }
+
+    .placement-opportunity-section .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 1260px;
+      font-size: 36px;
+    }
+
+    .swiper-row1,
+    .swiper-row2 {
+      width: 110%;
+      height: 100%;
+    }
+
+    .swiper-row1 img,
+    .swiper-row2 img {
+      border-radius: 12px;
+    }
+
+    .placement-opportunity-section .swiper-row1,
+    .placement-opportunity-section .swiper-row2 {
+      height: 120px;
+      margin-top: 20px;
+    }
+
+    .swiper-row1 .swiper-slide,
+    .swiper-row2 .swiper-slide {
+      width: 150px !important;
+      overflow: hidden;
+      background-position: top;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .swiper-row1 .swiper-wrapper,
+    .swiper-row2 .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .placement-logo-img {
+      width: 160px;
+      height: auto;
+    }
+
+    .footer-section {
+      width: 100%;
+      padding: 96px 90px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 64px;
+      overflow: hidden;
+    }
+
+    .footer-video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .footer-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      z-index: -1;
+      scale: 1.01;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(86.7% 79% at 100% 100%, rgba(0, 0, 0, 0.315) 0%, rgb(0, 0, 0) 100%);
+      z-index: -1;
+    }
+
+    .footer-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+      z-index: 1;
+    }
+
+    .footer-logo-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 48px;
+    }
+
+    @media (max-width: 991px) {
+      .footer-logo-row {
+        flex-direction: column;
+      }
+    }
+
+    .footer-logo-container {
+      height: 83px;
+    }
+
+    .footer-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 839px;
+      width: auto;
+      text-align: center;
+    }
+
+    .description-text {
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+
+    .hashtags {
+      display: flex;
+      gap: 22px;
+    }
+
+    .hashtag {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .red {
+      color: #fb4b50;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    .white {
+      color: white;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+    }
+
+    .location-info,
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 507px;
+      width: auto;
+    }
+
+    .info-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .map-icon,
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .info-title {
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .address,
+    .phone-info p,
+    .email-info p {
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .phone-info,
+    .email-info {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .phone-info img,
+    .email-info img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .national-admissions,
+    .international-admissions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .national-admissions h4,
+    .international-admissions h4 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0.03em;
+      color: white;
+      border-bottom: 1px solid white;
+      width: fit-content;
+    }
+
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .social-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: 48px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      background: none;
+    }
+
+    @media (max-width: 991px) {
+      .footer-section {
+        padding: 20px 0px;
+      }
+
+      .footer-logo-row {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .footer-description {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .footer-info {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .location-info,
+      .contact-info {
+        max-width: 100%;
+      }
+
+      .address,
+      .phone-info p,
+      .email-info p {
+        font-size: 16px;
+      }
+
+      .description-text {
+        font-size: 18px;
+      }
+
+      .red {
+        font-size: 28px;
+      }
+
+      .white {
+        font-size: 24px;
+      }
+
+      .hashtags {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .national-admissions h4,
+      .international-admissions h4 {
+        font-size: 18px;
+      }
+    }
+
+    /* international-students */
+    .international-students {
+      padding: 64px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .section-heading {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 60px;
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
+
+    .highlight {
+      color: red;
+    }
+
+    .student-info-container {
+      display: flex;
+      gap: 64px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .main-image {
+      height: 568px;
+      width: 584px;
+      border-radius: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flags-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .flags-row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .flag-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .flag-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .flag-group-border {
+      border-right: 1px solid #b1b4b9;
+      padding-right: 15px;
+    }
+
+    @media (max-width: 425px) {
+      .flag-grid {
+        gap: 5px;
+      }
+
+      .flag-group-border {
+        padding-right: 5px;
+      }
+    }
+
+    .flag-image {
+      width: 112px;
+      height: 80px;
+    }
+
+    .country-name {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .divider {
+      border-left: 1px solid #b1b4b9;
+      height: 72px;
+    }
+
+    @media (max-width: 1240px) {
+      .student-info-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .section-heading {
+        font-size: 32px;
+        line-height: 30px;
+      }
+
+      .main-image {
+        width: 400px;
+        height: 400px;
+      }
+
+      .flag-image {
+        width: 80px;
+        height: 60px;
+      }
+
+      .flag-group {
+        gap: 10px;
+      }
+
+      .flags-row {
+        gap: 20px;
+        width: 100%;
+      }
+    }
+
+    /* testimonials */
+
+    .testimonials-container {
+      align-items: center;
+      background-color: #F3F6FC;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: start;
+      padding: 64px 90px;
+    }
+
+    .testimonials-background {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      .testimonials-container {
+        padding: 0px;
+      }
+    }
+
+    .background-overlay {
+      width: 533.27px;
+      height: 533.67px;
+      position: absolute;
+      background-image: url("https://d1prjjs37junl3.cloudfront.net/admissions/Group.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .background-inner {
+      width: 533.27px;
+      height: 477.7px;
+      position: absolute;
+      background: #13233e;
+    }
+
+    .background-circle {
+      width: 152.93px;
+      height: 152.93px;
+      position: absolute;
+      top: 0;
+      left: 195.89px;
+      background: #13233e;
+    }
+
+    .testimonials-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .heading-title {
+      text-transform: uppercase;
+    }
+
+    .heading-main {
+      color: #111928;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 60px;
+      letter-spacing: 1.44px;
+    }
+
+    .heading-highlight {
+      color: #f52c31;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 60px;
+      letter-spacing: 1.44px;
+    }
+
+    @media (max-width: 991px) {
+
+      .heading-main,
+      .heading-highlight {
+        font-size: 30px;
+        line-height: 32px;
+      }
+    }
+
+    .heading-subtitle {
+      color: #6b7280;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+
+    .testimonial-card {
+      position: relative;
+      width: 384px;
+      height: 350px;
+      padding: 24px;
+      gap: 24px;
+      border-radius: 16px;
+      border: 1px solid #d1d5db;
+      background-color: white;
+    }
+
+    .desktop-slider {
+      display: block;
+    }
+
+    .mobile-slider {
+      display: none;
+    }
+
+    @media (max-width: 1260px) {
+      .desktop-slider {
+        display: none;
+      }
+
+      .mobile-slider {
+        display: block;
+      }
+    }
+
+    .student-image-wrapper {
+      position: absolute;
+      left: 20px;
+      top: -60px;
+    }
+
+    .student-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 16px;
+    }
+
+    .testimonial-content {
+      padding-top: 70px;
+    }
+
+    .testimonial-text {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 25px;
+      color: #6b7280;
+      height: 150px;
+    }
+
+    .student-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .student-name {
+      color: #111928;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+    }
+
+    .student-origin {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: left;
+    }
+
+    .student-course {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12px;
+      text-align: left;
+    }
+
+    .info-request-card {
+      max-width: 434px;
+      width: 100%;
+      border: 1px solid;
+      max-height: 580px;
+      height: 100%;
+      background-color: rgba(19, 35, 62, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: 18px;
+    }
+
+    .info-request-header {
+      border-bottom: 4px solid #ff5722;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      flex-direction: column;
+    }
+
+    .info-request-title {
+      color: #D3D3D3;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .info-request-subtitle {
+      color: #D3D3D3;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+      text-align: left;
+    }
+
+    .faculty-card {
+      align-items: center;
+      border-radius: 12px;
+      border: 1px solid var(--gray-300, #d1d5db);
+      background: var(--white, #fff);
+      display: flex;
+      min-width: 240px;
+      overflow: hidden;
+      justify-content: start;
+      flex-wrap: wrap;
+      flex: 1;
+      flex-basis: 0%;
+      /* padding: 12px; */
+    }
+
+    .faculty-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      cursor: pointer;
+      user-select: none;
+      width: 100%;
+      padding: 12px;
+    }
+
+    .faculty-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .faculty-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      display: none;
+
+    }
+
+    .program-item {
+      padding: 12px;
+      border-bottom: 1px solid #E9E9E9;
+      font-size: 16px;
+      color: #555;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: left;
+    }
+
+    .program-item:last-child {
+      border-bottom: none;
+    }
+
+    .program-item:first-child {
+      border-top: 1px solid #E9E9E9;
+    }
+
+
+    .enroll-area {
+      display: flex;
+      align-items: center;
+      gap: 40px 48px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+
+    .content-box {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      font-family: Orkney, sans-serif;
+      justify-content: start;
+      flex: 1;
+      flex-basis: 48px;
+      margin: auto 0;
+    }
+
+    @media (max-width: 991px) {
+      .content-box {
+        max-width: 100%;
+      }
+    }
+
+    .primary-content {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    @media (max-width: 991px) {
+      .primary-content {
+        max-width: 100%;
+      }
+    }
+
+    .uni-heading {
+      color: #fff;
+      font-size: 70px;
+      line-height: 84px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .uni-heading {
+        max-width: 100%;
+        font-size: 40px;
+        line-height: 36px;
+        margin-top: 10px;
+      }
+    }
+
+    .accent {
+      color: #fb4b50;
+    }
+
+    .info-container {
+      display: flex;
+      margin-top: 56px;
+      width: 100%;
+      flex-direction: column;
+      font-size: 24px;
+      color: #fb4b50;
+      font-weight: 400;
+      letter-spacing: 0.72px;
+      line-height: 32px;
+      justify-content: center;
+    }
+
+    @media (max-width: 991px) {
+      .info-container {
+        max-width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .info-text {
+      display: flex;
+      max-width: 100%;
+      width: 743px;
+      align-items: start;
+      gap: 8px;
+      justify-content: start;
+    }
+
+    .uni-intro {
+      align-self: stretch;
+      flex: 1;
+      min-width: 240px;
+      width: 743px;
+      gap: 24px;
+      color: white;
+    }
+
+    @media (max-width: 991px) {
+      .uni-intro {
+        max-width: 100%;
+      }
+    }
+
+    .tag-area {
+      align-self: start;
+      display: flex;
+      margin-top: 46px;
+      align-items: center;
+      gap: 24px;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 700;
+      text-transform: capitalize;
+      letter-spacing: 0.68px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .tag-area {
+        max-width: 100%;
+        margin-top: 40px;
+        gap: 0;
+        margin-top: 20px;
+      }
+    }
+
+    .tag-item {
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .tag-symbol {
+      font-size: 29px;
+      color: #fb4b50;
+    }
+
+    .tagline {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      letter-spacing: 0.72px;
+      margin-top: 46px;
+    }
+
+    @media (max-width: 991px) {
+      .tagline {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    .admission-details {
+      display: flex;
+      margin-top: 46px;
+      width: 100%;
+      flex-direction: column;
+      font-size: 16px;
+      color: #363636;
+      font-weight: 500;
+      line-height: 2;
+      justify-content: start;
+    }
+
+    @media (max-width: 991px) {
+      .admission-details {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    .admission-notice {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+    }
+
+    @media (max-width: 991px) {
+      .admission-notice {
+        max-width: 100%;
+      }
+    }
+
+    .notice-text {
+      align-self: stretch;
+      border-radius: 10px;
+      background: #fff;
+      gap: 10px;
+      padding: 18px 24px;
+      max-width: 294px;
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      .notice-text {
+        padding: 18px 20px;
+      }
+    }
+
+    .enrollment-form {
+      border-radius: 12px;
+      background-color: rgba(19, 35, 62, 0.7);
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      justify-content: start;
+      width: 434px;
+      height: 580px;
+      margin: auto 0;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(3px);
+    }
+
+    @media (max-width: 991px) {
+      .enrollment-form {
+        padding: 24px 20px;
+      }
+    }
+
+    .form-intro {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      font-family: Orkney, sans-serif;
+      justify-content: start;
+    }
+
+    .form-heading {
+      color: #fff;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .form-subheading {
+      color: #d1d5db;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header/NavBar -->
+  <header class="header-container">
+    <div class="header-content my-container">
+      <div class="logo-container">
+        <div class="logo-wrapper">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48618.png" alt="Main logo" />
+        </div>
+      </div>
+      <nav class="menu-container">
+        <ul class="menu-items">
+          <li class="menu-item dropdown">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/academic-cap.svg"
+              class="menu-icon" alt="Programs Icon" />
+            <span class="menu-text">Programs</span>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </li>
+          <li class="contact-item">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/phone.svg" class="menu-icon"
+              alt="Contact Icon" />
+            <span class="contact-text">Toll Free: 1800-233-12345</span>
+          </li>
+          <li>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/Item.svg" alt="Whatsapp Icon"
+              style="cursor: pointer;" />
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DropDown -->
+  <div class="dropdown-content">
+    <!-- New section added above dropdown -->
+    <div class="program-section">
+      <div class="program-btn program-btn-active" data-type="diploma">
+        Diploma
+      </div>
+
+      <div class="program-btn" data-type="under-graduation">
+        Under Graduation
+      </div>
+
+      <div class="program-btn" data-type="post-graduation">
+        Post-Graduation
+      </div>
+
+      <div class="program-btn" data-type="phd">Ph.D</div>
+
+      <div class="program-btn" data-type="certificate">Certificate</div>
+
+      <div class="program-btn" data-type="pg-diploma">PG-Diploma</div>
+
+      <div class="program-btn" data-type="maritime-studies">
+        Maritime Studies
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="diploma">
+      <ul>
+        <li><a href="#">Diploma (Computer)</a></li>
+        <li><a href="#">Diploma (IT)</a></li>
+        <li><a href="#">Diploma (Civil)</a></li>
+        <li><a href="#">Diploma (Electrical)</a></li>
+        <li><a href="#">Diploma (Mechanical)</a></li>
+        <li><a href="#">Diploma (Automobile)</a></li>
+        <li><a href="#">Diploma (Mechatronics)</a></li>
+        <li><a href="#">Diploma (Petrochemical)</a></li>
+        <li>
+          <a href="#">Diploma (Electronics and Communication Engineering)</a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#">Diploma + Degree (Civil)</a></li>
+        <li><a href="#">Diploma + Degree (Electrical)</a></li>
+        <li><a href="#">Diploma + Degree (Mechanical)</a></li>
+        <li><a href="#">Diploma + Degree (Computer)</a></li>
+        <li><a href="#">Diploma + Degree (Automobile)</a></li>
+        <li><a href="#">Diploma + Degree (Petrochemical)</a></li>
+        <li><a href="#">Diploma + Degree (Biomedical)</a></li>
+        <li><a href="#">Diploma + Degree (IT)</a></li>
+        <li><a href="#">Diploma with Degree (Chemical)</a></li>
+      </ul>
+      <a href="#" class="span-both">Diploma (Agriculture Engineering)</a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/after-10th-diploma-programs" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="under-graduation" style="display: none">
+      <ul class="left-column">
+        <li><a href="#">BCA (Computer Applications) (Hons.)</a></li>
+        <li><a href="#">B. Sc. (Hons.) (IT)</a></li>
+        <li><a href="#">B. Sc. (Hons.) (CA & IT)</a></li>
+        <li><a href="#">BCA + MCA (5 Years Integrated)</a></li>
+        <li>
+          <a href="#">B. Sc. IT (Hons.) (Infrastructure Management Services)</a>
+        </li>
+        <li><a href="#">B. Sc. IT (Hons.) (Cyber Security)</a></li>
+        <li><a href="#">B. Sc. IT (Hons.) (Data Science)</a></li>
+        <li><a href="#">B. Pharm. (Pharmacy)</a></li>
+        <li><a href="#">B. Tech. (Computer)</a></li>
+        <li><a href="#">B. Tech. (IT)</a></li>
+        <li><a href="#">B. Tech. (Mechatronics)</a></li>
+        <li><a href="#">B. Tech. (Mechanical)</a></li>
+        <li><a href="#">B. Tech. (Civil)</a></li>
+        <li><a href="#">B. Tech. (Electrical)</a></li>
+        <li><a href="#">B. Tech. (Biomedical)</a></li>
+        <li><a href="#">B. Tech. (Automobile)</a></li>
+        <li><a href="#">B. Tech. (Petrochemical)</a></li>
+        <li><a href="#">B. Tech. CE (Artificial Intelligence)</a></li>
+        <li><a href="#">B. Tech. (Biotechnology)</a></li>
+        <li>
+          <a href="#">B. Tech. CSE (Cloud-Based Applications - with IBM)</a>
+        </li>
+        <li>
+          <a href="#">B. Tech. CSE (Big Data and Analytics - with IBM)</a>
+        </li>
+        <li><a href="#">B. Tech. CSE (with IBM)</a></li>
+        <li><a href="#">B. Tech. (EC)</a></li>
+        <li><a href="#">B. Tech. CSE (Cyber Security - with IBM)</a></li>
+        <li>
+          <a href="#">B. Tech. (Computer Science and Business Systems)</a>
+        </li>
+      </ul>
+
+      <ul class="right-column">
+        <li><a href="#">B. Arch. (Architecture)</a></li>
+        <li><a href="#">B. Design (Interior Design)</a></li>
+        <li><a href="#">B. Des. (Product Design)</a></li>
+        <li><a href="#">B. Des. (Furniture Design)</a></li>
+        <li><a href="#">B. Des. (Graphics & Visual Communication)</a></li>
+        <li><a href="#">B. Sc. Hons. (Biotechnology)</a></li>
+        <li><a href="#">B. Sc. Hons. (Microbiology)</a></li>
+        <li><a href="#">B. Sc. Hons. (Mathematics)</a></li>
+        <li><a href="#">B. Sc. Hons. (Chemistry)</a></li>
+        <li><a href="#">B. Sc. Hons. (Physics)</a></li>
+        <li><a href="#">B. Sc. Hons. (Biomedical Science)</a></li>
+        <li><a href="#">B. Com. (General) Hons.</a></li>
+        <li><a href="#">BBA (General) Hons.</a></li>
+        <li><a href="#">BBA (Finance) Hons.</a></li>
+        <li><a href="#">BBA (Marketing Management) Hons.</a></li>
+        <li><a href="#">BBA (Logistics) - with Logistic Skill Council</a></li>
+        <li><a href="#">BBA Hons. (Business Analytics)</a></li>
+        <li><a href="#">BBA (Retail Management)</a></li>
+        <li><a href="#">B. Sc. (Nursing)</a></li>
+        <li><a href="#">General Nursing Midwifery (GNM)</a></li>
+        <li><a href="#">Bachelor of Physiotherapy (BPT)</a></li>
+        <li><a href="#">B. Sc. Hons. (Food Science and Technology)</a></li>
+        <li><a href="#">B.Sc. (Hons) Agriculture</a></li>
+        <li><a href="#">B. Tech. (Agriculture Engineering)</a></li>
+        <li><a href="#">B. Tech. (Food Technology)</a></li>
+      </ul>
+      <a href="#" class="span-both">Liberal Studies (BBA (Hons.), B.Com. (Hons.), BSW (Hons.), BA
+        (English Hons.), BA (Economics Hons.), BA (Psychology Hons.))</a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/after-12th-programs-undergraduate-programs"
+          target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="post-graduation" style="display: none">
+      <ul>
+        <li><a href="#">MCA (Computer Applications)</a></li>
+        <li><a href="#">M. Sc. (IT)</a></li>
+        <li><a href="#">M. Sc. (CA & IT)</a></li>
+        <li>
+          <a href="#">M. Sc. IT (Infrastructure Management Services)</a>
+        </li>
+        <li><a href="#">M. Sc. IT (Cyber Security)</a></li>
+        <li>
+          <a href="#">M.Sc. IT (Artificial Intelligence & Machine Learning)</a>
+        </li>
+        <li><a href="#">M. Sc. IT (Data Science)</a></li>
+        <li><a href="#">MBA (Business Analytics)</a></li>
+        <li><a href="#">MBA (Agribusiness)</a></li>
+        <li><a href="#">MBA (Pharmaceuticals)</a></li>
+        <li><a href="#">MBA (International Business)</a></li>
+        <li><a href="#">MBA (Financial Services)</a></li>
+
+        <li><a href="#">MBA (Logistics and Supply Chain Management)</a></li>
+        <li>
+          <a href="#">MBA (Innovation, Entrepreneurship, and Venture Development)</a>
+        </li>
+        <li><a href="#">MBA (Healthcare and Hospital Management)</a></li>
+        <li><a href="#">MSW (Social Work)</a></li>
+        <li><a href="#">M. Com. (Financial Analyst)</a></li>
+        <li><a href="#">M. Sc. (Biotechnology)</a></li>
+        <li><a href="#">M. Sc. (Biochemistry)</a></li>
+        <li><a href="#">M. Sc. (Microbiology)</a></li>
+        <li><a href="#">M. Sc. (Mathematics)</a></li>
+        <li><a href="#">M. Sc. (Physics)</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">M. Sc. (Botany)</a></li>
+        <li><a href="#">M. Sc. (Pharmaceutical Analysis)</a></li>
+        <li><a href="#">M. Sc. Chemistry (Analytical Chemistry)</a></li>
+        <li><a href="#">M. Sc. Chemistry (Organic Chemistry)</a></li>
+        <li><a href="#">M. Sc. Chemistry (Industrial Chemistry)</a></li>
+        <li><a href="#">M. Pharm. (Pharmaceutics)</a></li>
+        <li><a href="#">M. Pharm. (Pharmacology)</a></li>
+        <li><a href="#">M. Pharm. (Pharmaceutical Quality Assurance)</a></li>
+        <li><a href="#">M. Sc. (Agriculture Analytics)</a></li>
+        <li><a href="#">M. Sc. (Environment Science and Technology)</a></li>
+        <li><a href="#">M. Sc. (Food Science and Technology)</a></li>
+        <li><a href="#">M. Sc. (Food Nutrition and Dietetics)</a></li>
+        <li><a href="#">M. Tech. (Computer)</a></li>
+        <li><a href="#">M. Tech. (IT)</a></li>
+        <li><a href="#">M. Tech (EC)</a></li>
+        <li><a href="#">M. Tech. (CAD & CAM)</a></li>
+        <li><a href="#">M. Tech. (Advanced Manufacturing Systems)</a></li>
+        <li><a href="#">M. Tech. (Electrical)</a></li>
+        <li>
+          <a href="#">M. Tech. Civil (Construction Engg. & Management)</a>
+        </li>
+        <li><a href="#">M. Tech. Civil (Structural Engg.)</a></li>
+        <li><a href="#">M. Tech. (Biomedical)</a></li>
+        <li><a href="#">M. Tech. EC (VLSI System Design)</a></li>
+      </ul>
+      <a href="#" class="span-both">MBA (Marketing/Finance/HRM/International
+        Business/Entrepreneurship/Supply Chain Management)</a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/after-graduation-pg-programs" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="phd" style="display: none">
+      <ul>
+        <li>
+          <a href="#">Ph.D (Computer Science/ Information Technology)</a>
+        </li>
+        <li><a href="#">Ph.D (Civil Engineering)</a></li>
+        <li><a href="#">Ph.D (Electrical Engineering)</a></li>
+        <li><a href="#">Ph.D (Mechanical Engineering)</a></li>
+        <li>
+          <a href="#">Ph.D (Electronics & Communication Engineering)</a>
+        </li>
+        <li><a href="#">Ph.D (Chemistry)</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Ph.D (Mathematics)</a></li>
+        <li><a href="#">Ph.D (Microbiology)</a></li>
+        <li><a href="#">Ph.D (Biotechnology)</a></li>
+        <li><a href="#">Ph.D (Commerce)</a></li>
+        <li><a href="#">Ph.D (Economics)</a></li>
+        <li><a href="#">Ph.D (English)</a></li>
+      </ul>
+      <a href="#" class="span-both">Ph.D (Physics)</a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/after-post-graduation-phd" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="certificate" style="display: none">
+      <ul>
+        <li><a href="#">Certificate in Data Science</a></li>
+        <li><a href="#">Certificate in AI & ML</a></li>
+        <li><a href="#">Certificate in Cybersecurity</a></li>
+        <li><a href="#">Certificate in Web Development</a></li>
+        <li><a href="#">Certificate in Digital Marketing</a></li>
+        <li><a href="#">Certificate Diploma Program in Optometry</a></li>
+        <li>
+          <a href="#">Certificate Diploma Program in Operation Theatre Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in ECG & TMT Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Echo Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Pulmonary Function Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in EMG & NCV Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Dialysis Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Central Sterile Supply Department
+            Technician</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Medical Record Department</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">Certificate Program in Hospital Billing and Insurance</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Medical Transcriptionist</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Radiology & Imaging Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Medical Laboratory Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Diploma Program in Cath Lab Technology</a>
+        </li>
+        <li>
+          <a href="#">Certificate Advance Diploma program in Nurse Anaesthetist</a>
+        </li>
+        <li><a href="#">Certificate Program in Clinical Research</a></li>
+        <li>
+          <a href="#">Certificate Program in Cardiac Catheterization Laboratory
+            Nurse</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Cardiothoracic Operation Theatre Nurse</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in General Operation Theatre Nurse</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Cardiothoracic ICU Nurse</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Medical & Haemato Oncology Nurse</a>
+        </li>
+        <li>
+          <a href="#">Certificate Program in Obstetrics & Gynaecology Care Nurse</a>
+        </li>
+        <li><a href="#">Certificate Program in Neonatal Nurse</a></li>
+      </ul>
+      <a href="#" class="span-both">
+        Certificate Diploma Program in Respiratory & Sleep Medicine
+        Technology</a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/certificate-courses" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="pg-diploma" style="display: none">
+      <a href="#" class="span-both">
+        PG Diploma in Medical Laboratory Technology
+      </a>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/post-graduation-diploma" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+    <div class="dropdown-grid" data-type="maritime-studies" style="display: none">
+      <ul>
+        <li><a href="#">B. Sc. (Nautical Science) </a></li>
+        <li><a href="#">Diploma in Nautical Science (DNS) </a></li>
+        <li><a href="#">B. Tech. (Marine) </a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">Graduate Marine Engineering (GME)</a>
+        </li>
+        <li><a href="#">G. P. Ratings (Marine)</a></li>
+        <li><a href="#">ETO (Marine) </a></li>
+      </ul>
+      <div class="span-both" style="text-align: center">
+        <a href="https://www.ganpatuniversity.ac.in/programmes/marine-programs" target="_blank">
+          <button class="show-more-btn">View More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="admission-form" class="hero-section">
+    <section class="enroll-area my-container">
+      <div class=" content-box">
+        <div class="primary-content">
+          <h1 class="uni-heading"><span class="accent">NAAC A</span> Graded <br /> <span
+              style="line-height: 82px; color: #fff"> Top </span> University</h1>
+          <div class="info-container">
+            <div class="info-text">
+              <p class="uni-intro">Enroll yourself in an Institution which is <br /> <strong class="accent">Among the 50
+                  Most Prestigious universities</strong> <br /> In India for Quality
+                Learning</p>
+            </div>
+          </div>
+        </div>
+        <div class="tag-area">
+          <h2 class="tag-item"><span class="tag-symbol">#</span>StudyInIndia</h2>
+          <h2 class="tag-item"><span class="tag-symbol">#</span>StudyInGujarat</h2>
+          <h2 class="tag-item"><span class="tag-symbol">#</span>StudyInGUNI</h2>
+        </div>
+        <p class="tagline">Transform yourself to be the <span class="accent">Future Leader</span>. <br />Study at <span
+            class="accent">GUNI.</span></p>
+        <div class="admission-details">
+          <div class="admission-notice">
+            <p class="notice-text">Admissions open for 2024-2025</p>
+          </div>
+        </div>
+      </div>
+      <form class="enrollment-form">
+        <div class="form-intro">
+          <h2 class="form-heading">APPLY NOW</h2>
+          <p class="form-subheading">Inquire about 2024-2025 admissions</p>
+          <hr style="width: 100%; margin-top: 5px ;" />
+          <div class="form-content" style="width: 100%; height: 100%;">
+            <div class="npf_wgts" data-height="470px" data-w="f32c80e31ec9139869c2217a83302d51"></div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </section>
+
+  <!-- diverse-learning -->
+  <section class="diverse-learning-section">
+    <h2 class="diverse-section-title">
+      <span class="highlight">DIVERSE</span> LEARNING PATHS AND
+      <span class="highlight">ACADEMIC</span> STRUCTURES
+    </h2>
+    <div class="stats-container my-container">
+      <div class="stat-item">
+        <p class="stat-number">11</p>
+        <p class="stat-description">Academic Discipline</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">18</p>
+        <p class="stat-description">Institutes</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">22</p>
+        <p class="stat-description">Centre of Excellences (CoEs)</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">40</p>
+        <p class="stat-description">UG Programs</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">44</p>
+        <p class="stat-description">PG Programs</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">11</p>
+        <p class="stat-description">Diploma Programs</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">06</p>
+        <p class="stat-description">PhD</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- industry-associations -->
+  <section class="industry-associations">
+    <div class="industry-content-wrapper my-container">
+      <div class="industry-associations-container">
+        <div class="recognitions-approvals-container">
+          <div class="title-container" style="font-size: 33px">
+            <h2 class="title">
+              <span class="highlight">Recognitions</span> & Approvals
+            </h2>
+          </div>
+          <div class="recognitions-container">
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 07.png"
+                class="recognitions-logo-image" alt="University Grants Commission of India logo" />
+              <p class="recognitions-logo-title">
+                University Grants Commission of India
+              </p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 08.png"
+                class="recognitions-logo-image" alt="AICTE New Delhi logo" />
+              <p class="recognitions-logo-title">AICTE New Delhi</p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 09.png"
+                class="recognitions-logo-image" alt="Pharmacy Council of India logo" />
+              <p class="recognitions-logo-title">Pharmacy Council of India</p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 10.png"
+                class="recognitions-logo-image" alt="Council of Architecture New Delhi logo" />
+              <p class="recognitions-logo-title">
+                Council of Architecture New Delhi
+              </p>
+            </div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 06.png"
+                class="recognitions-logo-image" alt="Ministry of Ports logo" />
+              <p class="recognitions-logo-title">
+                Ministry of Shipping Government of India
+              </p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 05.png"
+                class="recognitions-logo-image" alt="Indian Nursing Council logo" />
+              <p class="recognitions-logo-title">Indian Nursing Council</p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 04.png"
+                class="recognitions-logo-image" alt="Directorate General of Shipping logo" />
+              <p class="recognitions-logo-title">
+                Directorate General of Shipping
+              </p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 03.png"
+                class="recognitions-logo-image" alt="Department of Scientific and Industrial Research logo" />
+              <p class="recognitions-logo-title">
+                Department of Scientific and Industrial Research
+              </p>
+            </div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 02.png"
+                class="recognitions-logo-image" alt="gujarat Nursing Council logo" />
+              <p class="recognitions-logo-title">gujarat Nursing Council</p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/RECOGNITIONS & APPROVALS/RECOGNITIONS & APPROVALS 01.png"
+                class="recognitions-logo-image" alt="gujarat state council for physiotherapy logo" />
+              <p class="recognitions-logo-title">
+                gujarat state council for physiotherapy
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="membership-container">
+          <div class="title-container" style="font-size: 33px">
+            <h2 class="title">MEMBERSHIP</h2>
+          </div>
+          <div class="recognitions-container">
+            <div class="recognitions-logo-container">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP/MEMBERSHIP 01.png"
+                class="recognitions-logo-image" alt="The Association of Commonwealth Universities logo" />
+              <p class="recognitions-logo-title">
+                The Association of Commonwealth Universities
+              </p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP/MEMBERSHIP 02.png"
+                class="recognitions-logo-image" alt="association of Indian universities logo" />
+              <p class="recognitions-logo-title">
+                association of Indian universities
+              </p>
+            </div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP/MEMBERSHIP 03.png"
+                class="recognitions-logo-image" alt="international association of universities logo" />
+              <p class="recognitions-logo-title">
+                international association of universities
+              </p>
+            </div>
+            <div class="separator"></div>
+            <div class="recognitions-logo-container">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP/MEMBERSHIP 04.png"
+                class="recognitions-logo-image" alt="Association of the Universities of Asia and the Pacific logo" />
+              <p class="recognitions-logo-title">
+                Association of the Universities of Asia and the Pacific
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="industry-container">
+        <div class="title-container">
+          <h2 class="title">
+            MEMBERSHIP WITH
+            <span class="highlight">INDUSTRY ASSOCIATIONS</span>
+          </h2>
+        </div>
+        <div class="industry-logo-container">
+          <div class="logo-group">
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 01.png"
+              class="logo logo-1" alt="Industry association logo 1" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 02.png"
+              class="logo logo-3" alt="Industry association logo 3" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 03.png"
+              class="logo logo-5" alt="Industry association logo 5" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 04.png"
+              class="logo logo-7" alt="Industry association logo 7" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 05.png"
+              class="logo logo-9" alt="Industry association logo 9" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 06.png"
+              class="logo logo-11" alt="Industry association logo 11" />
+          </div>
+          <div class="logo-group">
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 07.png"
+              class="logo logo-12" alt="Industry association logo 12" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 08.png"
+              class="logo logo-14" alt="Industry association logo 14" />
+            <div class="image-hidden industry-divider"></div>
+            <img loading="lazy"
+              src="https://d1prjjs37junl3.cloudfront.net/admissions/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS/MEMBERSHIP WITH INDUSTRY ASSOCIATIONS 09.png"
+              class="logo logo-16" alt="Industry association logo 16" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- awards-rating-section -->
+  <section class="awards-rating-section" style="position: relative;">
+    <div class="awards-rating-image-wrapper">
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group.svg" class="award-rating-bg-image" />
+    </div>
+    <h2 class="awards-section-title my-container">AWARDS & RATING</h2>
+    <div class="awards-container">
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48601.png" alt="Award 1"
+        class="award-image award-image-1" loading="lazy" />
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48602.png" alt="Award 2"
+        class="award-image award-image-2" loading="lazy" />
+      <div data-type="GSIRF" class="awards-image">
+        <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Mask group.png" alt="Award 3"
+          class="award-image award-image-3" loading="lazy" data-type="normal" style="display: block;" />
+        <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Mask group-1.png" alt="Award 3"
+          class="award-image award-image-3" loading="lazy" data-type="active" style="display: none;" />
+      </div>
+      <div data-type="Assocham" class="awards-image">
+        <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Assocham_India 1.png" alt="Award 4"
+          class="award-image award-image-4" loading="lazy" data-type="normal" style="display: block;" />
+        <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Assocham_India 1-1.png" alt="Award 4"
+          class="award-image award-image-4" loading="lazy" data-type="active" style="display: none;" />
+      </div>
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48605.png" alt="Award 5"
+        class="award-image award-image-5" loading="lazy" />
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48603.png" alt="Award 6"
+        class="award-image award-image-6" loading="lazy" />
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group 48604.png" alt="Award 7"
+        class="award-image award-image-7" loading="lazy" />
+    </div>
+    <div data-type="GSIRF" class="rankings-container my-container">
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/image 180.png" alt="Ranking Icon 1"
+        class="ranking-image ranking-image-1" loading="lazy" />
+      <div class="ranking-item">
+        <p class="ranking-title">Govt. of Gujarat - Education Department GSIRF
+        </p>
+        <p class="ranking-score"><span style="color: red;">3-Star </span>Overall Rating</p>
+        <p class="ranking-source" style="color: red;">2019</p>
+      </div>
+      <div class="ranking-item">
+        <p class="ranking-title">Govt. of Gujarat - Education Department GSIRF</p>
+        <p class="ranking-score"><span style="color: red;">4-Star </span>Overall Rating</p>
+        <p class="ranking-source" style="color: red;">2020</p>
+      </div>
+      <div class="ranking-item">
+        <p class="ranking-title">Govt. of Gujarat - Education Department GSIRF</p>
+        <p class="ranking-score"><span style="color: red;">4-Star </span>Overall Rating</p>
+        <p class="ranking-source" style="color: red;">2021</p>
+      </div>
+      <div class="ranking-item">
+        <p class="ranking-title">Govt. of Gujarat - Education Department GSIRF</p>
+        <p class="ranking-score"><span style="color: red;">5-Star </span>Overall Rating</p>
+        <p class="ranking-source" style="color: red;">2022</p>
+      </div>
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/image 179.png" alt="Ranking Icon 2"
+        class="ranking-image ranking-image-2" loading="lazy" />
+    </div>
+    <div data-type="Assocham" class="rankings-container my-container" style="display: none;">
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/image 180.png" alt="Ranking Icon 1"
+        class="ranking-image ranking-image-1" loading="lazy" />
+      <div class="ranking-item">
+        <p class="ranking-title">ASSOCHAM</p>
+        <p class="ranking-score">Awarded for</p>
+        <p class="ranking-source">Best University of the Year <span style="color: red;">2018</span>
+        </p>
+      </div>
+      <div class="ranking-item">
+        <p class="ranking-title">ASSOCHAM</p>
+        <p class="ranking-score">Awarded for</p>
+        <p class="ranking-source">Best University of the Year <span style="color: red;">2019</span>
+      </div>
+      <div class="ranking-item">
+        <p class="ranking-title">ASSOCHAM</p>
+        <p class="ranking-score">Awarded for</p>
+        <p class="ranking-source">Best University of the Year <span style="color: red;">2021</span>
+      </div>
+      <img src="https://d1prjjs37junl3.cloudfront.net/admissions/image 179.png" alt="Ranking Icon 2"
+        class="ranking-image ranking-image-2" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- excellence-section -->
+  <section class="excellence-section">
+    <img src="https://d1prjjs37junl3.cloudfront.net/admissions/centreofexcellence.webp" alt=""
+      class="excellence-background-image" />
+    <h2 class="excellence-section-title">
+      Centre of
+      <span class="highlight-red">Excellence</span> and
+      <span class="highlight-red">Industry</span> Associations
+    </h2>
+    <div class="excellence-logo-container my-container">
+      <div class="logo-row">
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 01.png"
+            alt="Logo 1" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 02.png"
+            alt="Logo 2" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 03.png"
+            alt="Logo 3" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 04.png"
+            alt="Logo 4" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 05.png"
+            alt="Logo 5" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 06.png"
+            alt="Logo 6" />
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 07.png"
+            alt="Logo 7" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 08.png"
+            alt="Logo 8" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 09.png"
+            alt="Logo 9" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 10.png"
+            alt="Logo 10" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 11.png"
+            alt="Logo 11" />
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 12.png"
+            alt="Logo 12" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 13.png"
+            alt="Logo 13" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 14.png"
+            alt="Logo 14" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 15.png"
+            alt="Logo 15" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 16.png"
+            alt="Logo 16" />
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 17.png"
+            alt="Logo 17" />
+        </div>
+        <div class="excellence-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Centre of Excellence/Centre of Excellence 18.png"
+            alt="Logo 18" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- programs-section -->
+  <section class="programs-section">
+    <div class="programs-content my-container">
+      <header class="programs-header">
+        <h2 class="programs-title">
+          <span class="highlight-red">Programs</span> offered
+        </h2>
+        <p class="programs-description">
+          Here we offer
+          <span class="highlight-black">100+</span> Industry-linked,
+          Employability-enhancing, and Heterogeneous Diploma, Bachelors and
+          Masters Programs. Grab this
+          <span class="highlight-black">opportunity</span> of designing your
+          <span class="highlight-black">promising career</span>.
+        </p>
+      </header>
+      <div class="unique-programs">
+        <h3 class="unique-programs-title">
+          Unique Programs offered by Ganpat University in association with
+        </h3>
+        <div class="partner-companies">
+          <p class="company-list">
+            IBM <span class="vertical-divider">|</span> SAS
+            <span class="vertical-divider">|</span> TCS
+            <span class="vertical-divider">|</span> e-Infochips
+            <span class="vertical-divider">|</span> Ascendum
+            <span class="vertical-divider">|</span> Shalby Hospital
+            <span class="vertical-divider">|</span>
+            Logistic Skill Council
+          </p>
+        </div>
+      </div>
+      <nav class="program-types program-types-grid" aria-label="Program Types">
+        <a href="#diploma" class="program-type program-type-active" data-type="diploma">Diploma</a>
+        <a href="#pg-diploma" class="program-type" data-type="pg-diploma">PG-Diploma</a>
+        <a href="#under-graduation" class="program-type" data-type="under-graduation">Under Graduation</a>
+        <a href="#maritime-studies" class="program-type" data-type="maritime-studies">Maritime Studies</a>
+        <a href="#post-graduation" class="program-type" data-type="post-graduation">Post-Graduation</a>
+        <a href="#phd" class="program-type" data-type="phd">Ph.D</a>
+        <a href="#certificate" class="program-type program-type-last" data-type="certificate">Certificate</a>
+      </nav>
+
+      <div class="features-grid">
+        <div class="feature-content" data-type="diploma">
+          <div class="feature-row">
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 181.png" alt="Computer icon"
+                class="feature-icon" />
+              <h4 class="feature-title">Computer</h4>
+            </div>
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 182.png"
+                alt="Information Technology icon" class="feature-icon" />
+              <h4 class="feature-title">Information Technology</h4>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Layer_1.png" alt="Civil Engineering icon"
+                class="feature-icon" />
+              <h4 class="feature-title">Civil</h4>
+            </div>
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 183.png"
+                alt="Electrical Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">Electrical</h4>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 184.png"
+                alt="Mechanical Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">Mechanical</h4>
+            </div>
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 186.png"
+                alt="Automobile Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">Automobile</h4>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 185.png" alt="Mechatronics icon"
+                class="feature-icon" />
+              <h4 class="feature-title">Mechatronics</h4>
+            </div>
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 187.png"
+                alt="Petrochemical Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">Petrochemical</h4>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 188.png"
+                alt="Electronics & Communication Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">
+                Electronics & Communication Engineering
+              </h4>
+            </div>
+            <div class="feature-card">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 189.png"
+                alt="Agriculture Engineering icon" class="feature-icon" />
+              <h4 class="feature-title">Agriculture Engineering</h4>
+            </div>
+          </div>
+        </div>
+        <div class="feature-content" data-type="pg-diploma" style="display: none">
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 01.svg"
+                  alt="PG Diploma in Medical Laboratory Technology icon" class="feature-icon" />
+                <h4 class="feature-title">PG Diploma in Medical Laboratory Technology</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-content" data-type="under-graduation" style="display: none">
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 181.png"
+                  alt="Faculty of Computer Applications icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Computer Applications</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">BCA (Computer Applications) (Hons)</p>
+                <p class="program-item">BCA (Computer Applications) (Hons)</p>
+                <p class="program-item">BCA (Computer Applications) (Hons)</p>
+                <p class="program-item">BCA (Computer Applications) (Hons)</p>
+                <p class="program-item">B.Sc. IT (Hons) (Infrastructure Management Services)</p>
+                <p class="program-item">B.Sc. IT (Hons) (Cyber Security)</p>
+                <p class="program-item">B.Sc. IT (Hons) (Data Science)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 02.svg"
+                  alt="Faculty of Architecture, Design & Planning icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Architecture, Design & Planning</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Faculty of Architecture, Design & Planning</p>
+                <p class="program-item">B. Des. (Product Design)</p>
+                <p class="program-item">B. Des. (Furniture Design)</p>
+                <p class="program-item">B. Des. (Graphics & Visual Communication)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 10.svg"
+                  alt="Faculty of Pharmacy icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Pharmacy</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Pharm. (Pharmacy)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 03.svg"
+                  alt="Faculty of Sciences icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Sciences</h4>
+              </div>
+
+              <div class="program-list">
+                <p class="program-item">B. Sc. Hons (Biotechnology)</p>
+                <p class="program-item">B. Sc. Hons (Microbiology)</p>
+                <p class="program-item">B. Sc. Hons (Mathematics)</p>
+                <p class="program-item">B. Sc.  Hons (Chemistry)</p>
+                <p class="program-item">B. Sc.  Hons (Physics)</p>
+                <p class="program-item">B. Sc. Hons (Biomedical Science).</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 09.svg"
+                  alt="Faculty of Computer Applications icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Engineering and Technology</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Tech. (Computer)</p>
+                <p class="program-item">B. Tech. (IT)</p>
+                <p class="program-item">B. Tech. (Mechatronics)</p>
+                <p class="program-item">B. Tech. (Mechanical)</p>
+                <p class="program-item">B. Tech. (Civil)</p>
+                <p class="program-item">B. Tech. (Electrical)</p>
+                <p class="program-item">B. Tech. (Biomedical)</p>
+                <p class="program-item">B. Tech. (B. Tech. (Automobile))</p>
+                <p class="program-item">B. Tech. (Petrochemical)</p>
+                <p class="program-item">B. Tech. CE (Artificial Intelligence)</p>
+                <p class="program-item">B. Tech. (Biotechnology)</p>
+                <p class="program-item">B. Tech. CSE (Cloud Based Applications - with IBM)</p>
+                <p class="program-item">B. Tech. CSE (Big Data and Analytics - with IBM)</p>
+                <p class="program-item">B. Tech. CSE ( with IBM)</p>
+                <p class="program-item">B. Tech. (EC)</p>
+                <p class="program-item">B. Tech. CSE (Cyber Security - with IBM)</p>
+                <p class="program-item">B. Tech (Computer Science and Business Systems)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 04.svg"
+                  alt="Faculty of Social Sciences & Humanities icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Social Sciences & Humanities</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Com. (General) Hons.</p>
+                <p class="program-item">Liberal Studies (BBA (Hons.) or B.Com. (Hons.) or BSW (Hons.) or (BA (English
+                  (Hons.) or Economics (Hons.) or Psychology (Hons.) )</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 05.svg"
+                  alt="Faculty of Management Studies icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Management Studies</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">BBA  (General) Hons.</p>
+                <p class="program-item">BBA  (Finance) Hons.</p>
+                <p class="program-item">BBA  (Marketing Management) Hons.</p>
+                <p class="program-item">BBA (Logistics) - with Logistic Skill Council</p>
+                <p class="program-item">BBA Hons. (Business Analytics) Hons</p>
+                <p class="program-item">BBA ( Retail Management)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 08.svg"
+                  alt="Faculty of Agriculture & Allied Sciences icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Agriculture & Allied Sciences</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Sc. Hons. (Food Science and Technology) </p>
+                <p class="program-item">B.Sc. (Hons) Agriculture</p>
+                <p class="program-item">B. Tech (Agriculture Engineering)</p>
+                <p class="program-item">B. Tech (Food Technology)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 06.svg"
+                  alt="Faculty of  Nursing icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of  Nursing</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Sc. (Nursing)</p>
+                <p class="program-item">General Nursing Midwifery (GNM)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 07.svg"
+                  alt="Faculty of Health and Allied Sciences icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Health and Allied Sciences</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Bachelor of Physiotherapy(BPT)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-content" data-type="maritime-studies" style="display: none">
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 34.svg"
+                  alt="B. Sc. (Nautical Science) icon" class="feature-icon" />
+                <h4 class="feature-title">B. Sc. (Nautical Science)</h4>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 34.svg"
+                  alt="Diploma in Nautical Science (DNS) icon" class="feature-icon" />
+                <h4 class="feature-title">Diploma in Nautical Science (DNS)</h4>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 35.svg"
+                  alt="B. Tech. (Marine) icon" class="feature-icon" />
+                <h4 class="feature-title">B. Tech. (Marine)</h4>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 09.svg"
+                  alt="Faculty of Engineering and Technology icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Engineering and Technology</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Graduate Marine Engineering (GME)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 36.svg"
+                  alt="Marine Engineering icon" class="feature-icon" />
+                <h4 class="feature-title">Marine Engineering</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">G. P. Ratings (Marine)</p>
+                <p class="program-item">ETO (Marine)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-content" data-type="post-graduation" style="display: none">
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/image 181.png"
+                  alt="Faculty of Computer Applications icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Computer Applications</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">MCA (Computer Applications)</p>
+                <p class="program-item">M. Sc. (IT)</p>
+                <p class="program-item">M. Sc. (CA & IT)</p>
+                <p class="program-item">M. Sc. IT (Infrastructure Management Services)</p>
+                <p class="program-item">M. Sc. IT (Infrastructure Management Services)</p>
+                <p class="program-item">M.Sc. IT (Artificial Intelligence & Machine Learning)</p>
+                <p class="program-item">M. Sc. IT (Data Science)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 03.svg"
+                  alt="Faculty of Agriculture & Allied Sciences icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Agriculture & Allied Sciences</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">B. Sc. Hons. (Food Science and Technology) </p>
+                <p class="program-item">B.Sc. (Hons) Agriculture</p>
+                <p class="program-item">B. Tech (Agriculture Engineering)</p>
+                <p class="program-item">B. Tech (Food Technology)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 05.svg"
+                  alt="Faculty of Management Studies icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Management Studies</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">MBA (Business Analytics)</p>
+                <p class="program-item">MBA (Agribusiness)</p>
+                <p class="program-item">MBA (Pharmaceuticals)</p>
+                <p class="program-item">MBA (International Business)</p>
+                <p class="program-item">MBA (Financial Services)</p>
+                <p class="program-item">MBA (Marketing/Finance/HRM/ International Business/Entrepreneurship/Supply Chain
+                  Management)</p>
+                <p class="program-item">MBA (Logistics and Supply Chain Management)</p>
+                <p class="program-item">MBA (Innovation, Entrepreneurship, and Venture Development)</p>
+                <p class="program-item">MBA (Healthcare and Hospital Management)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 10.svg"
+                  alt="Faculty of Pharmacy icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Pharmacy</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">M. Pharm. (Pharmaceutics)</p>
+                <p class="program-item">M. Pharm. (Pharmacology)</p>
+                <p class="program-item">M. Pharm. (Pharmaceutical Quality Assurance)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 04.svg"
+                  alt="Faculty of Social Sciences and Humanities icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Social Sciences and Humanities</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">MSW (Social Work)</p>
+                <p class="program-item">M. Com. (Financial Analyst)</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 09.svg"
+                  alt="Faculty of Engineering and Technology icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Engineering and Technology</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">M. Tech. (Computer)</p>
+                <p class="program-item">M. Tech. (IT)</p>
+                <p class="program-item">M. Tech. (EC)</p>
+                <p class="program-item">M. Tech. (CAD & CAM)</p>
+                <p class="program-item">M. Tech. (Advanced Manufacturing Systems)</p>
+                <p class="program-item">M. Tech. (Electrical)</p>
+                <p class="program-item">M. Tech. Civil (Construction Engg. & Management)</p>
+                <p class="program-item">M. Tech. Civil (Structural Engg.)</p>
+                <p class="program-item">M. Tech. (Biomedical)</p>
+                <p class="program-item">M. Tech. EC (VLSI System Design)</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 08.svg"
+                  alt="Faculty of Allied Sciences and Technology icon" class="feature-icon" />
+                <h4 class="feature-title">Faculty of Allied Sciences and Technology</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">M. Sc. (Agriculture Analytics)</p>
+                <p class="program-item">M. Sc. (Environment Science and Technology)</p>
+                <p class="program-item">M. Sc. (Food Science and Technology)</p>
+                <p class="program-item">M. Sc. (Food Nutrition and Dietetics)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-content" data-type="phd" style="display: none">
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 09.svg"
+                  alt="Engineering and Technology icon" class="feature-icon" />
+                <h4 class="feature-title">Engineering and Technology</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Computer Science/ Information Technology</p>
+                <p class="program-item">Civil engineering</p>
+                <p class="program-item">Electrical Engineering</p>
+                <p class="program-item">Mechanical Engineering</p>
+                <p class="program-item">Electronics & Communication Engineering</p>
+              </div>
+            </div>
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 03.svg" alt="Science icon"
+                  class="feature-icon" />
+                <h4 class="feature-title">Science</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Chemistry</p>
+                <p class="program-item">Physics</p>
+                <p class="program-item">Mathematics</p>
+                <p class="program-item">Microbiology</p>
+                <p class="program-item">Biotechnology</p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="faculty-card">
+              <div class="faculty-header">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 08.svg"
+                  alt="Social Science & Humanities icon" class="feature-icon" />
+                <h4 class="feature-title">Social Science & Humanities</h4>
+              </div>
+              <div class="program-list">
+                <p class="program-item">Commerce</p>
+                <p class="program-item">Economics</p>
+                <p class="program-item">English</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="feature-content" data-type="certificate" style="display: none">
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 12.svg"
+              alt="Certificate Diploma Program in Optometry icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Optometry</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 33.svg"
+              alt="Certificate Diploma Program in Operation Theatre Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Operation Theatre Technology</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 13.svg"
+              alt="Certificate Diploma Program in ECG & TMT Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in ECG & TMT Technology</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 32.svg"
+              alt="Certificate Diploma Program in Echo Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Echo Technology</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 14.svg"
+              alt="Certificate Diploma Program in Pulmonary Function Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Pulmonary Function Technology</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 31.svg"
+              alt="Certificate Diploma Program in Respiratory & Sleep Medicine Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Respiratory & Sleep Medicine Technology</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 15.svg"
+              alt="Certificate Diploma Program in EMG & NCV Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in EMG & NCV (Nerve Conduction Velocity)
+              Technology
+            </h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 30.svg"
+              alt="Certificate Program in Central Sterile Supply Department Technician icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Central Sterile Supply Department Technician</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 16.svg"
+              alt="Certificate Diploma Program in Dialysis Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Dialysis Technology</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 29.svg"
+              alt="Certificate Program in Hospital Billing and Insurance icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Hospital Billing and Insurance</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 17.svg"
+              alt="Certificate Program in Medical Record Department icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Medical Record Department</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 28.svg"
+              alt="Certificate Diploma Program in Radiology & Imaging Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Radiology & Imaging Technology</h4>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 18.svg"
+              alt="Certificate Program in Medical Transcriptionist icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Medical Transcriptionist</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 27.svg"
+              alt="Certificate Diploma Program in Cath Lab Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Cath Lab Technology</h4>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 01.svg"
+              alt="Certificate Diploma Program in Medical Laboratory Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Diploma Program in Medical Laboratory Technology</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 26.svg"
+              alt="Certificate Diploma Program in Cath Lab Technology icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Clinical Research</h4>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 19.svg"
+              alt="Certificate Advance Diploma program in Nurse Anaesthetist icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Advance Diploma program in Nurse Anaesthetist</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 25.svg"
+              alt="Certificate Program in Cardiothoracic Operation Theatre Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Cardiothoracic Operation Theatre Nurse</h4>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 20.svg"
+              alt="Certificate Program in General Operation Theatre Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in General Operation Theatre Nurse</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 24.svg"
+              alt="Certificate Program in Cardiothoracic Operation Theatre Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Cardiothoracic Operation Theatre Nurse</h4>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 21.svg"
+              alt="Certificate Program in Medical & Haemato Oncology Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Medical & Haemato Oncology Nurse</h4>
+          </div>
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 23.svg"
+              alt="Certificate Program in Obstetrics & Gynaecology Care Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Obstetrics & Gynaecology Care Nurse</h4>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-card">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Icon/Icon 22.svg"
+              alt="Certificate Program in Neonatal Nurse icon" class="feature-icon" />
+            <h4 class="feature-title">Certificate Program in Neonatal Nurse</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- facilities-content -->
+  <section id="facilities" class="facilities-content">
+    <header class="facilities-header">
+      <h2 class="facilities-title">
+        <span>GUNI</span>
+        <span class="highlight-red">facilities</span>
+      </h2>
+      <p class="facilities-subtitle">
+        Student-Centric Facilities for a Vibrant Campus Experience
+      </p>
+    </header>
+    <div class="swiper-container-small">
+      <div class="swiper-wrapper">
+        <!-- Set 2 -->
+        <div class="swiper-slide">
+          <div class="gallery-column">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness01.webp"
+              class="gallery-image" alt="Fitness equipment" />
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness02.webp"
+              class="gallery-image" alt="Workout session" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness03.webp"
+            class="gallery-image-tall" alt="Full body workout demonstration" />
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-column-wide">
+            <div class="gallery-row">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness04.webp"
+                class="gallery-image-square" alt="Yoga pose" />
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness05.webp"
+                class="gallery-image-square" alt="Weight lifting" />
+            </div>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness06.webp"
+              class="gallery-image-wide" alt="Group fitness class" />
+          </div>
+        </div>
+        <!-- set 3 -->
+        <div class="swiper-slide">
+          <div class="gallery-column">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos01.webp"
+              class="gallery-image" alt="Campus facility 1" />
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos02.webp"
+              class="gallery-image" alt="Campus facility 2" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos03.webp"
+            class="gallery-image-tall" alt="Campus facility 3" />
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-column-wide">
+            <div class="gallery-row">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos04.webp"
+                class="gallery-image-square" alt="Campus facility 4" />
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos05.webp"
+                class="gallery-image-square" alt="Campus facility 5" />
+            </div>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos06.webp"
+              class="gallery-image-wide" alt="Campus facility 6" />
+          </div>
+        </div>
+        <!-- set 4 -->
+        <div class="swiper-slide">
+          <div class="gallery-column">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports01.webp"
+              class="gallery-image" alt="Campus facility 1" />
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports02.webp"
+              class="gallery-image" alt="Campus facility 2" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports03.webp"
+            class="gallery-image-tall" alt="Campus facility 3" />
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-column-wide">
+            <div class="gallery-row">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports04.webp"
+                class="gallery-image-square" alt="Campus facility 4" />
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports05.webp"
+                class="gallery-image-square" alt="Campus facility 5" />
+            </div>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports06.webp"
+              class="gallery-image-wide" alt="Campus facility 6" />
+          </div>
+        </div>
+        <!-- set 5 -->
+        <div class="swiper-slide">
+          <div class="gallery-column">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym01.webp"
+              class="gallery-image" alt="Campus facility 1" />
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym02.webp"
+              class="gallery-image" alt="Campus facility 2" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym03.webp"
+            class="gallery-image-tall" alt="Campus facility 3" />
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-column-wide">
+            <div class="gallery-row">
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym04.webp"
+                class="gallery-image-square" alt="Campus facility 4" />
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym05.webp"
+                class="gallery-image-square" alt="Campus facility 5" />
+            </div>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym06.webp"
+              class="gallery-image-wide" alt="Campus facility 6" />
+          </div>
+        </div>
+        <!-- set 6 -->
+        <div class="swiper-slide">
+          <div class="gallery-column">
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool01.webp"
+              class="gallery-image" alt="Campus facility 1" />
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool02.webp"
+              class="gallery-image" alt="Campus facility 2" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool03.webp"
+            class="gallery-image-tall" alt="Campus facility 3" />
+        </div>
+        <div class="swiper-slide">
+          <div class="gallery-column-wide">
+            <div class="gallery-row">
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool04.webp"
+                class="gallery-image-square" alt="Campus facility 4" />
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool05.webp"
+                class="gallery-image-square" alt="Campus facility 5" />
+            </div>
+            <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool06.webp"
+              class="gallery-image-wide" alt="Campus facility 6" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-small-pagination"></div>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="facilities-gallery">
+            <div class="gallery-grid">
+              <div class="gallery-column">
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness01.webp"
+                  class="gallery-image" alt="Fitness equipment" />
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness02.webp"
+                  class="gallery-image" alt="Workout session" />
+              </div>
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness03.webp"
+                class="gallery-image-tall" alt="Full body workout demonstration" />
+              <div class="gallery-column-wide">
+                <div class="gallery-row">
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness04.webp"
+                    class="gallery-image-square" alt="Yoga pose" />
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness05.webp"
+                    class="gallery-image-square" alt="Weight lifting" />
+                </div>
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/fittness/fittness06.webp"
+                  class="gallery-image-wide" alt="Group fitness class" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="facilities-gallery">
+            <div class="gallery-grid">
+              <div class="gallery-column">
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos01.webp"
+                  class="gallery-image" alt="Campus facility 1" />
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos02.webp"
+                  class="gallery-image" alt="Campus facility 2" />
+              </div>
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos03.webp"
+                class="gallery-image-tall" alt="Campus facility 3" />
+              <div class="gallery-column-wide">
+                <div class="gallery-row">
+                  <img loading="lazy"
+                    src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos04.webp"
+                    class="gallery-image-square" alt="Campus facility 4" />
+                  <img loading="lazy"
+                    src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos05.webp"
+                    class="gallery-image-square" alt="Campus facility 5" />
+                </div>
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/eventphotos/eventphotos06.webp"
+                  class="gallery-image-wide" alt="Campus facility 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="facilities-gallery">
+            <div class="gallery-grid">
+              <div class="gallery-column">
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports01.webp"
+                  class="gallery-image" alt="Campus facility 1" />
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports02.webp"
+                  class="gallery-image" alt="Campus facility 2" />
+              </div>
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports03.webp"
+                class="gallery-image-tall" alt="Campus facility 3" />
+              <div class="gallery-column-wide">
+                <div class="gallery-row">
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports04.webp"
+                    class="gallery-image-square" alt="Campus facility 4" />
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports05.webp"
+                    class="gallery-image-square" alt="Campus facility 5" />
+                </div>
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/sports/sports06.webp"
+                  class="gallery-image-wide" alt="Campus facility 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="facilities-gallery">
+            <div class="gallery-grid">
+              <div class="gallery-column">
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym01.webp"
+                  class="gallery-image" alt="Campus facility 1" />
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym02.webp"
+                  class="gallery-image" alt="Campus facility 2" />
+              </div>
+              <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym03.webp"
+                class="gallery-image-tall" alt="Campus facility 3" />
+              <div class="gallery-column-wide">
+                <div class="gallery-row">
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym04.webp"
+                    class="gallery-image-square" alt="Campus facility 4" />
+                  <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym05.webp"
+                    class="gallery-image-square" alt="Campus facility 5" />
+                </div>
+                <img loading="lazy" src="https://d1prjjs37junl3.cloudfront.net/admissions/gym/gym06.webp"
+                  class="gallery-image-wide" alt="Campus facility 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="facilities-gallery">
+            <div class="gallery-grid">
+              <div class="gallery-column">
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool01.webp"
+                  class="gallery-image" alt="Campus facility 1" />
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool02.webp"
+                  class="gallery-image" alt="Campus facility 2" />
+              </div>
+              <img loading="lazy"
+                src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool03.webp"
+                class="gallery-image-tall" alt="Campus facility 3" />
+              <div class="gallery-column-wide">
+                <div class="gallery-row">
+                  <img loading="lazy"
+                    src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool04.webp"
+                    class="gallery-image-square" alt="Campus facility 4" />
+                  <img loading="lazy"
+                    src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool05.webp"
+                    class="gallery-image-square" alt="Campus facility 5" />
+                </div>
+                <img loading="lazy"
+                  src="https://d1prjjs37junl3.cloudfront.net/admissions/swimmingpool/swimmingpool06.webp"
+                  class="gallery-image-wide" alt="Campus facility 6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Placement Opportunity section -->
+  <section class="placement-opportunity-section">
+    <header class="header">
+      <h2 class="title">
+        PLACEMENT <span class="highlight-red">OPPORTUNITIES</span> FROM
+        TRUSTED <span class="highlight-red">INDUSTRY</span> CONNECTIONS
+      </h2>
+    </header>
+
+    <!-- First Row Slider (moves right) -->
+    <div class="swiper-row1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/01.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/02.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/03.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/04.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/05.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/06.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/07.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/08.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/09.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/10.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/11.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/12.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/13.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/14.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/15.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/16.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/17.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/18.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/19.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/20.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/21.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/22.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/23.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/24.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/25.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/26.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/27.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/28.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/29.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/30.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/31.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/32.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/33.webp" alt="Logo 1"
+            class="placement-logo-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row Slider (moves left) -->
+    <div class="swiper-row2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/34.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/35.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/36.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/37.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/38.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/39.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/40.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/41.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/42.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/43.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/44.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/45.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/46.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/47.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/48.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/49.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/50.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/51.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/52.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/53.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/54.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/55.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/56.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/57.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/58.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/59.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/60.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/61.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/62.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/63.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/64.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/65.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/PLACEMENT OPPORTUNITIES/66.webp" alt="Logo 4"
+            class="placement-logo-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- alumni-section -->
+  <section class="alumni-section">
+    <img src="https://d1prjjs37junl3.cloudfront.net/admissions/alumni.webp" alt="" class="background-image" />
+    <div class="alumni-content-wrapper my-container">
+      <h2 class="subtitle">Become a Part of the World's</h2>
+      <h1 class="main-title">
+        <span class="highlight">Leading</span> Companies By joining a Network
+        Of
+        <span class="highlight">Successful Alumni</span>
+      </h1>
+    </div>
+    <div class="alumni-grid my-container">
+      <div class="alumni-card">
+        <img
+          src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/freepik_br_f3125826-cdcf-477a-b513-1f9ab12c672a 2.png"
+          alt="Heli Solanki" class="alumni-image" />
+        <div class="company-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/evergas 1.png" alt="Company logo"
+            class="company-logo" />
+        </div>
+        <div class="alumni-info">
+          <h3 class="alumni-name">Heli Solanki</h3>
+          <p class="alumni-position">Merchant Navy Girl Officer Cadet</p>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <img
+          src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/freepik_br_f3125826-cdcf-477a-b513-1f9ab12c672a 2-1.png"
+          alt="Rahil Mansuri" class="alumni-image" />
+        <div class="company-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/apple-11 1.png" alt="Company logo"
+            class="company-logo" />
+        </div>
+        <div class="alumni-info">
+          <h3 class="alumni-name">Rahil Mansuri</h3>
+          <p class="alumni-position mb-16">Senior Software Engineer</p>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <img
+          src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/freepik_br_f3125826-cdcf-477a-b513-1f9ab12c672a 2-2.png"
+          alt="Brinda Kamani" class="alumni-image" />
+        <div class="company-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/image 204.png" alt="Company logo"
+            class="company-logo" />
+        </div>
+        <div class="alumni-info">
+          <h3 class="alumni-name">Brinda Kamani</h3>
+          <p class="alumni-position">
+            Vice President of Sales & Customer Success
+          </p>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <img
+          src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/freepik_br_f3125826-cdcf-477a-b513-1f9ab12c672a 2-3.png"
+          alt="Vaibhav Mehta" class="alumni-image" />
+        <div class="company-logo-wrapper">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Alumni/Group 48616.png" alt="Company logo"
+            class="company-logo" />
+        </div>
+        <div class="alumni-info">
+          <h3 class="alumni-name">Vaibhav Mehta</h3>
+          <p class="alumni-position mb-16">Software Engineer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- testimonial-section -->
+  <section class="testimonials-container">
+    <div class="testimonials-background my-container">
+      <div class="background-overlay">
+        <!-- <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group.svg"
+          style="z-index: 1; max-width: 533px; width: 100%; max-width: 533px; height: 100%;" /> -->
+      </div>
+      <div class="testimonials-heading">
+        <div class="heading-title">
+          <span class="heading-main">Student </span>
+          <span class="heading-highlight">testimonials</span>
+        </div>
+        <div class="heading-subtitle">Our Students, Our Pride!</div>
+      </div>
+      <div class="student-swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  "Throughout my residency in Gujarat, I have been intrigued
+                  by the vivacious culture and the hospitality of the natives.
+                  I have found Gujarat to be very safe and opportunity,
+                  promising state."
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Priti Sharma</p>
+                  <p class="student-origin">from Assam State</p>
+                  <p class="student-course">B.Tech(CE), 2019-2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-1.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “Admission Team of Ganpat University assisted me, not only
+                  up to the Admission & Study VISA process – but they also
+                  extended their support in many other areas.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Varaidzo Soka</p>
+                  <p class="student-origin">from Zimbabwe</p>
+                  <p class="student-course">B.Pharm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-2.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “Ganpat University is one of the best destinations in India
+                  to pursue your career, with excellent sports facilities,
+                  cultural practices and zero racism. It turned out to be
+                  comfortably my second home.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">B.Pharm</p>
+                  <p class="student-origin">from Madagascar</p>
+                  <p class="student-course">
+                    Diploma of Engineering, CE 2020-2023
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-3.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “The best thing about my degree was the industry-linked
+                  internship, which gave me hands-on experience of applying
+                  theory and also helped to build my professional network.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Himali Kansara</p>
+                  <p class="student-origin">Ganpat University-VMPIM</p>
+                  <p class="student-course">MBA, Marketing (2020-2022)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-4.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “Ganpat University has always had a great reputation in the
+                  industry, that was one of the reasons I applied. When you’re
+                  starting out I think it reflects well on you to be a GUNI
+                  graduate.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Poojan Kulshreshtha</p>
+                  <p class="student-origin">Ganpat University-ICT</p>
+                  <p class="student-course">
+                    B.Tech.CSE (Big Data & Analytics) (2018-2022)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-5.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “Ganpat University has always had a great reputation in the
+                  industry, that was one of the reasons I applied. When you’re
+                  starting out I think it reflects well on you to be a GUNI
+                  graduate.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Siddhi Darji,M.Pharm</p>
+                  <p class="student-origin">Ganpat University-SKPCER</p>
+                  <p class="student-course">Quality Assurance (2020-2022)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="student-image-wrapper">
+                <img src="https://d1prjjs37junl3.cloudfront.net/admissions/testimonials/testimonials-6.png"
+                  class="student-image" />
+              </div>
+              <div class="testimonial-content">
+                <h6 class="testimonial-text">
+                  “It helped me in my overall development and made me capable
+                  of focusing on my future goals. For this I am thankful to
+                  all my faculties for showing the right path at the right
+                  time.”
+                </h6>
+                <div class="student-details">
+                  <p class="student-name">Dhaval Vora</p>
+                  <p class="student-origin">Ganpat University</p>
+                  <p class="student-course">B.Arch. (2016-2021)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="student-swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- international-students -->
+  <section class="international-students my-container">
+    <h4 class="section-heading">
+      Proud to have <span class="highlight">International</span> students
+    </h4>
+    <div class="student-info-container">
+      <div class="international-students-swiper" style="overflow: hidden">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international01.webp" />
+          </div>
+          <div class="swiper-slide two-image">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international03.webp" />
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international04.webp" />
+          </div>
+          <div class="swiper-slide two-image">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international05.webp" />
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international06.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international02.webp" />
+          </div>
+          <div class="swiper-slide two-image">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international07.webp" />
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/international/international08.webp" />
+          </div>
+        </div>
+      </div>
+
+      <div class="flags-container">
+        <div class="flag-grid">
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 01.png" />
+            <p class="country-name">Zimbabwe</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 02.png" />
+            <p class="country-name">Madagascar</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 03.png" />
+            <p class="country-name">Turkey</p>
+          </div>
+          <div class="flag-group">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 04.png" />
+            <p class="country-name">Liberia</p>
+          </div>
+        </div>
+
+        <div class="flag-grid">
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 08.png" />
+            <p class="country-name">Nepal</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 07.png" />
+            <p class="country-name">Bangladesh</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 06.png" />
+            <p class="country-name">Ethiopia</p>
+          </div>
+          <div class="flag-group">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 05.png" />
+            <p class="country-name">Saudi Arabia</p>
+          </div>
+        </div>
+
+        <div class="flag-grid">
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 09.png" />
+            <p class="country-name">Sri Lanka</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 10.png" />
+            <p class="country-name">Rwanda</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 11.png" />
+            <p class="country-name">Kenya</p>
+          </div>
+          <div class="flag-group">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 12.png" />
+            <p class="country-name">South Sudan</p>
+          </div>
+        </div>
+
+        <div class="flag-grid">
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 13.png" />
+            <p class="country-name">Congo</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 15.png" />
+            <p class="country-name">UAE</p>
+          </div>
+          <div class="flag-group flag-group-border">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 14.png" />
+            <p class="country-name">Sudan</p>
+          </div>
+          <div class="flag-group">
+            <img class="flag-image" src="https://d1prjjs37junl3.cloudfront.net/admissions/Flags/Flags 16.png" />
+            <p class="country-name">Tanzania</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ignite-section -->
+  <section class="ignite-section">
+    <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Group.svg" alt="" class="ignite-section-img" />
+    <div class="content-wrapper my-container">
+      <h1 class="main-heading">
+        Ignite your <span class="highlight-red">potential</span>
+      </h1>
+      <p class="sub-heading">This is the path to your dream career.</p>
+    </div>
+    <a href="#admission-form" style="cursor: pointer ; z-index: 1;">
+      <button class="cta-button">Apply Now</button>
+    </a>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer-section" style="position: relative;">
+    <div class="footer-video-container">
+      <video class="footer-video" autoplay muted loop playsinline>
+        <source src="https://d1prjjs37junl3.cloudfront.net/admissions/Guni.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="footer-content my-container">
+      <div class="footer-logo-row">
+        <div class="footer-logo-container">
+          <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Frame 238335.png" alt="Ganpat Logo" />
+        </div>
+        <div class="footer-description">
+          <div class="description-text">
+            300 acre campus equipped with modern infrastructure and supportive
+            learning environment
+          </div>
+          <div class="hashtags">
+            <div class="hashtag">
+              <span class="red">#</span><span class="white">StudentsFirst</span>
+            </div>
+            <div class="hashtag">
+              <span class="red">#</span><span class="white">CharacterMust</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <div class="location-info">
+          <div class="info-header">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/map.svg" class="map-icon" />
+            <h3 class="info-title">Locate Us</h3>
+          </div>
+          <p class="address">
+            <strong>Ganpat University</strong><br />
+            Ganpat Vidyanagar, Mehsana-Gandhinagar Highway, North Gujarat,
+            INDIA, PO - 384012
+          </p>
+        </div>
+        <div class="contact-info">
+          <div class="info-header">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/status-online.svg" class="contact-icon" />
+            <h3 class="info-title">Contact Us</h3>
+          </div>
+          <div class="national-admissions">
+            <h4>For National & Domestic Admissions</h4>
+            <div class="phone-info">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/phone.svg" />
+              <p><strong>Mo.</strong> : +91-8100616161</p>
+            </div>
+            <div class="email-info">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/mail.svg" />
+              <p><strong>Email</strong> : admission@ganpatuniversity.ac.in</p>
+            </div>
+          </div>
+          <div class="international-admissions">
+            <h4>For International Admissions</h4>
+            <div class="phone-info">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/phone.svg" />
+              <p><strong>Mo.</strong> : +91-6359663001</p>
+            </div>
+            <div class="email-info">
+              <img src="https://d1prjjs37junl3.cloudfront.net/admissions/mail.svg" />
+              <p>
+                <strong>Email</strong> : int.admission@ganpatuniversity.ac.in
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-media">
+        <h3 class="social-title">Follow Us</h3>
+        <div class="social-icons">
+          <a class="facebook-icon">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/facebook-f.svg" />
+          </a>
+          <a class="youtube-icon">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/YouTube.svg" />
+          </a>
+          <a class="instagram-icon">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/instgram.svg" />
+          </a>
+          <a class="linkedin-icon">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/LinkedIn - White.svg" />
+          </a>
+          <a class="X-icon">
+            <img src="https://d1prjjs37junl3.cloudfront.net/admissions/Logo.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load the NoPaperForms widgets script
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      script.src = "https://widgets.nopaperforms.com/emwgts.js";
+
+      // Error handling in case the script fails to load
+      script.onerror = function () {
+        console.error("Failed to load the NoPaperForms script. Please check the URL or your internet connection.");
+        alert("There was an error loading the form. Please try again later.");
+      };
+
+      // Add the script to the document head
+      document.head.appendChild(script);
+
+      // Optional: Callback to execute after script loads successfully
+      script.onload = function () {
+        console.log("NoPaperForms script loaded successfully.");
+
+        // You can also initialize or configure the widgets here if required
+        // Example: Custom code to execute after the script loads
+      };
+    });
+  </script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const programButtons = document.querySelectorAll(".program-btn");
+    const dropdownGrids = document.querySelectorAll(".dropdown-grid");
+
+    programButtons.forEach((button) => {
+      button.addEventListener("mouseover", function () {
+        programButtons.forEach((btn) =>
+          btn.classList.remove("program-btn-active")
+        );
+
+        this.classList.add("program-btn-active");
+
+        const selectedType = this.getAttribute("data-type");
+
+        dropdownGrids.forEach((grid) => {
+          grid.style.display = "none";
+        });
+
+        const selectedGrid = document.querySelector(
+          `.dropdown-grid[data-type="${selectedType}"]`
+        );
+        if (selectedGrid) {
+          if (window.innerWidth < 768) {
+            selectedGrid.style.display = "flex";
+          } else {
+            selectedGrid.style.display = "grid";
+          }
+        }
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const awardImages = document.querySelectorAll('.awards-image img');
+    const rankingsContainers = document.querySelectorAll('.rankings-container');
+    awardImages.forEach(image => {
+      image.addEventListener('click', function (event) {
+        event.preventDefault();
+        awardImages.forEach(img => {
+          img.classList.remove('award-image-active'); // Remove active class from all images
+          const normalImg = img.parentElement.querySelector('img[data-type="normal"]');
+          const activeImg = img.parentElement.querySelector('img[data-type="active"]');
+          if (normalImg && activeImg) {
+            normalImg.style.display = 'block';
+            activeImg.style.display = 'none';
+          }
+        });
+        this.classList.add('award-image-active');
+
+        const normalImg = this.parentElement.querySelector('img[data-type="normal"]');
+        const activeImg = this.parentElement.querySelector('img[data-type="active"]');
+
+        if (normalImg && activeImg) {
+          normalImg.style.display = 'none';
+          activeImg.style.display = 'block';
+        }
+        const selectedType = this.parentElement.getAttribute('data-type');
+        rankingsContainers.forEach(container => {
+          container.style.display = 'none';
+        });
+        const activeContainer = document.querySelector(`.rankings-container[data-type="${selectedType}"]`);
+        if (activeContainer) {
+          activeContainer.style.display = 'flex';
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      if (awardImages.length > 0) {
+        const firstImage = awardImages[0];
+        const normalImg = firstImage.parentElement.querySelector('img[data-type="normal"]');
+        const activeImg = firstImage.parentElement.querySelector('img[data-type="active"]');
+
+        if (normalImg && activeImg) {
+          normalImg.style.display = 'none';
+          activeImg.style.display = 'block';
+        }
+        firstImage.classList.add('award-image-active');
+      }
+      if (rankingsContainers.length > 0) {
+        rankingsContainers.forEach(container => container.style.display = 'none');
+        rankingsContainers[0].style.display = 'flex';
+      }
+    });
+
+    const programTypes = document.querySelectorAll(".program-type");
+    const featureContents = document.querySelectorAll(".feature-content");
+
+    programTypes.forEach((program) => {
+      program.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        programTypes.forEach((p) =>
+          p.classList.remove("program-type-active")
+        );
+
+        this.classList.add("program-type-active");
+
+        const selectedType = this.getAttribute("data-type");
+
+        featureContents.forEach(
+          (content) => (content.style.display = "none")
+        );
+
+        document.querySelector(
+          `.feature-content[data-type="${selectedType}"]`
+        ).style.display = "block";
+      });
+
+
+    });
+
+    const facultyHeaders = document.querySelectorAll('.faculty-header');
+
+    facultyHeaders.forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const programList = this.nextElementSibling;
+        if (programList.style.maxHeight) {
+          programList.style.maxHeight = null;
+          programList.style.display = 'none';
+        } else {
+          programList.style.display = 'block';
+          programList.style.maxHeight = programList.scrollHeight + "px";
+        }
+      });
+    });
+
+    const swiper = new Swiper(".swiper-container", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+    });
+
+    const swiper12 = new Swiper(".swiper-container-small", {
+      loop: true,
+      pagination: {
+        el: ".swiper-small-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+    });
+
+    const swiper1 = new Swiper(".swiper-row1", {
+      loop: true,
+      spaceBetween: 36,
+      slidesPerView: 10,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      speed: 2000,
+      freeMode: false,
+      freeModeMomentum: true,
+      simulateTouch: false,
+      mousewheel: false,
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 30,
+        },
+        1440: {
+          slidesPerView: 10,
+          spaceBetween: 36,
+        },
+      },
+      on: {
+        slideChange: function () {
+          swiper.update();
+        },
+      },
+    });
+
+    const swiper2 = new Swiper(".swiper-row2", {
+      loop: true,
+      spaceBetween: 36,
+      slidesPerView: 10,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      },
+      speed: 3000,
+      freeMode: false,
+      freeModeMomentum: true,
+      simulateTouch: false,
+      mousewheel: false,
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+        1440: {
+          slidesPerView: 10,
+          spaceBetween: 36,
+        },
+      },
+      on: {
+        slideChange: function () {
+          swiper.update();
+        },
+      },
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".menu-item.dropdown");
+    const dropdownContent = document.querySelector(".dropdown-content");
+    const dropdownIcon = dropdown.querySelector(".dropdown-icon");
+
+    dropdown.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+      dropdown.classList.toggle("show-icon");
+    });
+
+    document.querySelectorAll(".program-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    });
+    window.onclick = function (event) {
+      if (!event.target.closest(".dropdown")) {
+        const dropdowns = document.querySelectorAll(".dropdown-content");
+        dropdowns.forEach(function (dropdown) {
+          dropdown.classList.remove("show");
+        });
+
+        const dropdownParents = document.querySelectorAll(
+          ".menu-item.dropdown"
+        );
+        dropdownParents.forEach(function (dropdownParent) {
+          dropdownParent.classList.remove("show-icon");
+        });
+      }
+    };
+  });
+
+  const swiper3 = new Swiper(".student-swiper-container", {
+    loop: true,
+    pagination: {
+      el: ".student-swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 2000,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 36,
+      },
+    },
+    spaceBetween: 10,
+  });
+
+  const swiper5 = new Swiper(".international-students-swiper", {
+    loop: true,
+    pagination: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 1000,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    slidesPerView: 1,
+  });
+</script>
+
+</html>
